@@ -11,13 +11,15 @@ function App() {
   const [genreIdsForUrl, setGenreIdsForUrl] = useState([]);
 
   const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=&with_watch_monetization_types=flatrate`;
+  const genreIdsJoined = genreIdsForUrl.join("|");
+  console.log(genreIdsJoined);
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
   console.log(genreIdsForUrl);
   useEffect(() => {
     axios.get(url).then((res) => {
-      //setMoviesDatabase((res.data))
+      console.log(res.data);
     });
-  }, []);
+  }, [genreIdsJoined]);
 
   const handleGetId = (e) => {
     if (genreIdsForUrl.includes(parseInt(e.target.id, 10))) {
