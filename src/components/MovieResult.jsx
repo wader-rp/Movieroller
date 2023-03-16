@@ -1,20 +1,12 @@
-import React from 'react'
+import React from "react";
 
-export const MovieResult = () => {
+export const MovieResult = ({ randomMovie }) => {
   return (
     <div>
-        <div>
-            Title
-        </div>
-        <div>
-            Year
-        </div>
-        <div>   
-            Categories
-        </div>
-        <div>   
-            Image
-        </div>
+      <div>{randomMovie.title}</div>
+      <div>Year</div>
+      <div>Categories</div>
+      <div>Image</div>
     </div>
-  )
-}
+  );
+};

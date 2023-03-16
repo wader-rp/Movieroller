@@ -1,2 +1,1 @@
-const randomPageGen = (n) => Math.floor(Math.random() * n);
-export const randomPage = randomPageGen(400);
+export const randomNumber = (n) => Math.floor(Math.random() * n);
