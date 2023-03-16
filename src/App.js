@@ -5,6 +5,7 @@ import axios from "axios";
 import "./index.css";
 import { useState, useEffect } from "react";
 import { genres } from "./data/MovieGenres";
+import { randomPage } from "./helpers/randomPageGenerator";
 
 function App() {
   const [moviesDatabase, setMoviesDatabase] = useState(null);
@@ -12,9 +13,9 @@ function App() {
 
   const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
   const genreIdsJoined = genreIdsForUrl.join("|");
-  console.log(genreIdsJoined);
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
-  console.log(genreIdsForUrl);
+  console.log(randomPage);
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&with_genres=${genreIdsJoined}&page=${randomPage}&with_watch_monetization_types=flatrate`;
+
   useEffect(() => {
     axios.get(url).then((res) => {
       console.log(res.data);
@@ -22,8 +23,10 @@ function App() {
   }, [genreIdsJoined]);
 
   const handleGetId = (e) => {
-    if (genreIdsForUrl.includes(parseInt(e.target.id, 10))) {
-      const id = genreIdsForUrl.indexOf(parseInt(e.target.id, 10));
+    const targetIdToNumber = parseInt(e.target.id, 10);
+
+    if (genreIdsForUrl.includes(targetIdToNumber)) {
+      const id = genreIdsForUrl.indexOf(targetIdToNumber);
 
       setGenreIdsForUrl((prev) => {
         let newArr = [...prev];
@@ -32,7 +35,7 @@ function App() {
       });
     } else {
       setGenreIdsForUrl((prev) => {
-        return [...prev, parseInt(e.target.id, 10)];
+        return [...prev, targetIdToNumber];
       });
     }
   };
