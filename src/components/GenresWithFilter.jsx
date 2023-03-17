@@ -15,6 +15,7 @@ export const GenresWithFilter = ({ handleGetId, genreIdsForUrl }) => {
             isChecked={genreIdsForUrl.includes(genre.id)}
           />
         ))}
+        <button className="genre-btn clear-button">Clear All</button>
       </div>
     </div>
   );

@@ -6,9 +6,9 @@ export const IncludeAdult = ({ setIncludeAdult, includeAdult }) => {
   const onChange = () => setIncludeAdult((prev) => !prev);
 
   return (
-    <div>
+    <div className="adult-switch-spacing">
       <Switch
-        unCheckedChildren={"Adult content"}
+        unCheckedChildren={"Allow adult content"}
         checkedChildren={"Adult content"}
         checked={includeAdult}
         onChange={onChange}

@@ -42,9 +42,9 @@ function App() {
             yearsRange={yearsRange}
           />
 
-          <div>
-            <button onClick={() => setIsFiltered(true)}>ROLL!</button>
-          </div>
+          <button className="roll-button" onClick={() => setIsFiltered(true)}>
+            ROLL!
+          </button>
         </>
       ) : (
         <div>{randomMovie && <MovieResult randomMovie={randomMovie} />}</div>

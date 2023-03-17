@@ -7,7 +7,7 @@ export const getMarks = (years) => {
         color: "#685454",
         fontFamily: "Orbitron",
         letterSpacing: 10,
-        fontSize: 20,
+        fontSize: 18,
         marginTop: 5,
       },
       label: <strong>{year}</strong>,
