@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 export const GenresWithFilter = ({ handleGetId, genreIdsForUrl }) => {
   return (
-    <div className="genres-cntr">
+    <div className="genres-position">
       <div className="genres-bar">
         {genres.map((genre) => (
           <GenreButton
