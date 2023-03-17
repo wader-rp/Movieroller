@@ -3,10 +3,8 @@ import { MovieResult } from "./components/MovieResult";
 import axios from "axios";
 import "./index.css";
 import { useState, useEffect } from "react";
-import { randomNumber, randomPage } from "./helpers/randomPageGenerator";
-import { DatePicker, Space } from "antd";
+import { randomNumber } from "./helpers/randomPageGenerator";
 import FilterScreen from "./components/FilterScreen/FilterScreen";
-const { RangePicker } = DatePicker;
 
 function App() {
   const [movieData, setMovieData] = useState(null);
@@ -14,7 +12,6 @@ function App() {
   const [includeAdult, setIncludeAdult] = useState(false);
   const [isFiltered, setIsFiltered] = useState(false);
   const [yearsRange, setYearsRange] = useState([1879, 2023]);
-  console.log(genreIdsForUrl);
 
   const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
   const genreIdsJoined = genreIdsForUrl.join("|");
