@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar";
-import { MovieResult } from "./components/MovieResult";
+import { MovieResult } from "./components/MovieResult/MovieResult";
 import axios from "axios";
 import "./index.css";
 import { useState, useEffect } from "react";
@@ -26,7 +26,7 @@ function App() {
   }, [genreIdsJoined]);
 
   const randomMovie = movieData && movieData.results[randomNumber(20)];
-
+  console.log(randomMovie);
   return (
     <div className="app">
       <NavBar />
@@ -47,7 +47,9 @@ function App() {
           </button>
         </>
       ) : (
-        <div>{randomMovie && <MovieResult randomMovie={randomMovie} />}</div>
+        <div className="result-content">
+          {randomMovie && <MovieResult randomMovie={randomMovie} />}
+        </div>
       )}
     </div>
   );

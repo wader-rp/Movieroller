@@ -3,7 +3,11 @@ import "./styles.css";
 import { genres } from "../data/MovieGenres";
 import classNames from "classnames";
 
-export const GenresWithFilter = ({ handleGetId, genreIdsForUrl }) => {
+export const GenresWithFilter = ({
+  setGenreIdsForUrl,
+  handleGetId,
+  genreIdsForUrl,
+}) => {
   return (
     <div className="genres-position">
       <div className="genres-bar">
@@ -15,7 +19,12 @@ export const GenresWithFilter = ({ handleGetId, genreIdsForUrl }) => {
             isChecked={genreIdsForUrl.includes(genre.id)}
           />
         ))}
-        <button className="genre-btn clear-button">Clear All</button>
+        <button
+          className="genre-btn clear-button"
+          onClick={() => setGenreIdsForUrl([])}
+        >
+          Clear All
+        </button>
       </div>
     </div>
   );

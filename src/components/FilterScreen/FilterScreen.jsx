@@ -40,6 +40,7 @@ const FilterScreen = ({
       <GenresWithFilter
         handleGetId={handleGetId}
         genreIdsForUrl={genreIdsForUrl}
+        setGenreIdsForUrl={setGenreIdsForUrl}
       />
 
       <IncludeAdult
