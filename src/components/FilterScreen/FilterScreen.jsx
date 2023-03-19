@@ -1,52 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GenresWithFilter } from "../GenresWithFilter";
-import { Slider, Space } from "antd";
+import { Slider } from "antd";
 import { IncludeAdult } from "../IncludeAdult";
 import { getMarks } from "./helpers";
 import "./filterScreenStyles.css";
+import { FiltersContext } from "../../Contexts/FilterContext";
 
-const FilterScreen = ({
-  genreIdsForUrl,
-  setGenreIdsForUrl,
-  setYearsRange,
-  setIncludeAdult,
-  includeAdult,
-  yearsRange,
-}) => {
-  const handleGetId = (id) => {
-    if (genreIdsForUrl.includes(id)) {
-      const gId = genreIdsForUrl.indexOf(id);
-
-      setGenreIdsForUrl((prev) => {
-        let newArr = [...prev];
-        newArr.splice(gId, 1);
-        return newArr;
-      });
-    } else {
-      setGenreIdsForUrl((prev) => {
-        return [...prev, id];
-      });
-    }
-  };
+const FilterScreen = () => {
+  const { setYearsRange, yearsRange } = useContext(FiltersContext);
 
   return (
     <div className="filter-screen">
       <div className="description">
         Hi! If you don't know what movie to watch today, this is the app for
-        you. Just set the filters (or just let fade decide) and enjoy the random
+        you. Just set the filters (or just let fate decide) and enjoy the random
         choice.
       </div>
       <h1>Select movie categories</h1>
-      <GenresWithFilter
-        handleGetId={handleGetId}
-        genreIdsForUrl={genreIdsForUrl}
-        setGenreIdsForUrl={setGenreIdsForUrl}
-      />
 
-      <IncludeAdult
-        includeAdult={includeAdult}
-        setIncludeAdult={setIncludeAdult}
-      />
+      <GenresWithFilter />
+      <IncludeAdult />
+
       <h1>Select a range of years</h1>
       <div className="slider">
         <div className="slider-container">

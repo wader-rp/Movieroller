@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Switch } from "antd";
 import classNames from "classnames";
+import { FiltersContext } from "../Contexts/FilterContext";
 
-export const IncludeAdult = ({ setIncludeAdult, includeAdult }) => {
+export const IncludeAdult = () => {
+  const { includeAdult, setIncludeAdult } = useContext(FiltersContext);
+
   const onChange = () => setIncludeAdult((prev) => !prev);
 
   return (
