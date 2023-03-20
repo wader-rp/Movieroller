@@ -1,3 +1,20 @@
+.movie-results-container {
+  position: relative;
+  width: 100vw;
+
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.movie-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  border: 1px solid black;
+}
 .poster-image {
   width: 300px;
   border: 4px solid var(--thirdColor);
@@ -15,13 +32,38 @@
   letter-spacing: 2px;
   font-weight: bolder;
   font-size: 1rem;
+  border: 1px solid black;
   margin-top: 0.5rem;
 }
 .overview {
-  width: 75%;
+  width: 300px;
+  height: min-content;
+  border: 1px solid black;
 }
 
 .overview-text {
   font-family: "Orbitron", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  border: 1px solid black;
+}
+.movie-rating {
+  border: 1px solid black;
+}
+.streamings {
+  border: 1px solid black;
+  flex-grow: 1.5;
+}
+
+.movie-rating {
+  display: flex;
+  margin-top: 5rem;
+  justify-content: center;
+  flex-grow: 1.5;
+  max-height: 3rem;
+}
+
+.ant-rate {
+  border: 1px solid black;
+  color: var(--thirdColor) !important;
+  font-size: 30px;
 }
