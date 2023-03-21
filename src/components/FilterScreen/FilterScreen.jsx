@@ -27,7 +27,7 @@ const FilterScreen = () => {
           <Slider
             range
             marks={getMarks(yearsRange)}
-            min={1879}
+            min={1935}
             max={2023}
             trackStyle={{ backgroundColor: "#685454" }}
             handleStyle={{ borderColor: "#685454" }}

@@ -6,7 +6,7 @@ import { FiltersContext } from "../Contexts/FilterContext";
 export const IncludeAdult = () => {
   const { includeAdult, setIncludeAdult } = useContext(FiltersContext);
 
-  const onChange = () => setIncludeAdult((prev) => !prev);
+  const adultContentSwitch = () => setIncludeAdult((prev) => !prev);
 
   return (
     <div className="adult-switch-spacing">
@@ -14,7 +14,7 @@ export const IncludeAdult = () => {
         unCheckedChildren={"Allow adult content"}
         checkedChildren={"Adult content"}
         checked={includeAdult}
-        onChange={onChange}
+        onChange={adultContentSwitch}
         className={classNames("adult-switch", {
           "adult-switch-checked": includeAdult,
         })}

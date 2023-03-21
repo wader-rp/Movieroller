@@ -6,7 +6,7 @@ export const FiltersContext = createContext(null);
 export const FilterContextProvider = ({ children }) => {
   const [includeAdult, setIncludeAdult] = useState(false);
   const [isFiltered, setIsFiltered] = useState(false);
-  const [yearsRange, setYearsRange] = useState([1879, 2023]);
+  const [yearsRange, setYearsRange] = useState([1935, 2023]);
   const [genreIdsForUrl, setGenreIdsForUrl] = useState([]);
 
   const triggerGenre = (id) => {
