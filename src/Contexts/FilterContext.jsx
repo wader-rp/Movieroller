@@ -5,7 +5,7 @@ export const FiltersContext = createContext(null);
 
 export const FilterContextProvider = ({ children }) => {
   const [includeAdult, setIncludeAdult] = useState(false);
-  const [isFiltered, setIsFiltered] = useState(false);
+  const [fetchedMovies, setFetchedMovies] = useState(false);
   const [yearsRange, setYearsRange] = useState([1935, 2023]);
   const [genreIdsForUrl, setGenreIdsForUrl] = useState([]);
 
@@ -30,8 +30,8 @@ export const FilterContextProvider = ({ children }) => {
       value={{
         includeAdult,
         setIncludeAdult,
-        isFiltered,
-        setIsFiltered,
+        fetchedMovies,
+        setFetchedMovies,
         yearsRange,
         setYearsRange,
         genreIdsForUrl,
