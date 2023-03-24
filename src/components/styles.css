@@ -11,7 +11,7 @@ h1 {
 
 .navbar {
   width: 100%;
-  height: 100px;
+  height: 55px;
   background-color: var(--firstColor);
   background-image: linear-gradient(
     180deg,

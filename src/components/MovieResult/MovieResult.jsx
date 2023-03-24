@@ -9,6 +9,7 @@ const endOfContainerSwitchJustifyer = 63;
 
 export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   const [cast, setCast] = useState([]);
+  const [crew, setCrew] = useState([]);
   const [containerShift, setContainerShift] = useState(0);
   const contentRef = useRef(null);
   const containerRef = useRef(null);
@@ -24,6 +25,14 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
     });
   }, []);
 
+  useEffect(() => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
+    axios.get(url).then((res) => {
+      setCrew(res.data.crew);
+    });
+  }, []);
+
+  console.log(cast);
   const handleArrowClick = (direction) => {
     switch (direction) {
       case "left":
@@ -99,7 +108,7 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
             style={{ left: containerShift }}
             ref={contentRef}
           >
-            {cast.slice(0, 10).map((actor) => {
+            {cast.slice(0, 20).map((actor) => {
               return (
                 <div className="actor-box" key={actor.name}>
                   <img
@@ -112,7 +121,12 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
                     }
                   />
 
-                  <span className="actor-name">{actor.name}</span>
+                  <div className="actor-name">
+                    <span className="actor-name-char name">{actor.name}</span>
+                    <span className="actor-name-char char">
+                      {actor.character}
+                    </span>
+                  </div>
                 </div>
               );
             })}{" "}
