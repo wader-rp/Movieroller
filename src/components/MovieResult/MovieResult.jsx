@@ -65,81 +65,98 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   };
 
   return (
-    <div className="movie-results-container">
-      <div className="movie-poster">
-        <img
-          alt={"poster"}
-          className="poster-image"
-          src={`https://image.tmdb.org/t/p/w200${randomMovie.poster_path}`}
-        />
-      </div>
-      <div className="movie-info">
-        <div className="title-year-text">
-          {`${randomMovie.title}\u00A0(${randomMovie.release_date.substring(
-            0,
-            4
-          )})`}
-        </div>
-        <div className="genres">{genresNames}</div>
-        <div className="movie-rating">
-          <Rate
-            disabled
-            allowHalf
-            count={10}
-            value={randomMovie.vote_average}
-            className="stars-rating"
+    <div
+      className="movie-results-container-bg"
+      style={{
+        backgroundImage: `url(
+          https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${randomMovie.poster_path}
+        )`,
+      }}
+    >
+      <div className="movie-results-container">
+        <div className="movie-poster">
+          <img
+            alt={"poster"}
+            className="poster-image"
+            src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${randomMovie.poster_path}`}
           />
-          <div>{`(${randomMovie.vote_count})`}</div>
         </div>
-
-        <div className="overview">
-          <div className="overview-text">{randomMovie.overview}</div>
-        </div>
-
-        <div className="actors-slider" ref={containerRef}>
-          <div
-            className="slider-arrow left"
-            onClick={() => handleArrowClick("left")}
-          >
-            {"<"}
+        <div className="movie-info">
+          <div className="title-year-text">
+            {`${randomMovie.title}\u00A0(${randomMovie.release_date.substring(
+              0,
+              4
+            )})`}
           </div>
-          <div
-            className="actors-slider-container"
-            style={{ left: containerShift }}
-            ref={contentRef}
-          >
-            {cast.slice(0, 20).map((actor) => {
-              return (
-                <div className="actor-box" key={actor.name}>
-                  <img
-                    alt="portrait"
-                    className="actor-portrait"
-                    src={
-                      actor.profile_path
-                        ? `https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${actor.profile_path}`
-                        : "https://static8.depositphotos.com/1009634/988/v/450/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg"
-                    }
-                  />
+          <div className="genres">{genresNames}</div>
+          <div className="movie-rating">
+            <Rate
+              disabled
+              allowHalf
+              count={10}
+              value={randomMovie.vote_average}
+              className="stars-rating"
+            />
+            <div>{`(${randomMovie.vote_count})`}</div>
+          </div>
 
-                  <div className="actor-name">
-                    <span className="actor-name-char name">{actor.name}</span>
-                    <span className="actor-name-char char">
-                      {actor.character}
-                    </span>
+          <div className="overview">
+            <div className="overview-text">{randomMovie.overview}</div>
+          </div>
+
+          <div className="actors-slider" ref={containerRef}>
+            <div
+              className="slider-arrow left"
+              onClick={() => handleArrowClick("left")}
+            >
+              {"<"}
+            </div>
+            <div
+              className="actors-slider-container"
+              style={{ left: containerShift }}
+              ref={contentRef}
+            >
+              {cast.slice(0, 20).map((actor) => {
+                return (
+                  <div
+                    className="actor-box"
+                    key={actor.name}
+                    style={{
+                      backgroundImage: actor.profile_path
+                        ? `url(https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${actor.profile_path})`
+                        : "url(https://static8.depositphotos.com/1009634/988/v/450/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg)",
+                    }}
+                  >
+                    {/* <img
+                      alt="portrait"
+                      className="actor-portrait"
+                      src={
+                        actor.profile_path
+                          ? `https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${actor.profile_path}`
+                          : "https://static8.depositphotos.com/1009634/988/v/450/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg"
+                      }
+                    /> */}
+
+                    <div className="actor-name">
+                      <span className="actor-name-char name">{actor.name}</span>
+                      <span className="actor-name-char char">
+                        {actor.character}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              );
-            })}{" "}
-          </div>
-          <div
-            className="slider-arrow right"
-            onClick={() => handleArrowClick("right")}
-          >
-            {">"}
+                );
+              })}{" "}
+            </div>
+            <div
+              className="slider-arrow right"
+              onClick={() => handleArrowClick("right")}
+            >
+              {">"}
+            </div>
           </div>
         </div>
+        <div className="streamings"></div>
       </div>
-      <div className="streamings"></div>
     </div>
   );
 };
