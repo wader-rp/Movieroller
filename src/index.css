@@ -22,8 +22,8 @@ code {
   background-color: var(--thirdColor);
   background-image: linear-gradient(
     0deg,
-    rgb(244, 232, 232) 0%,
-    rgba(235, 213, 213, 1) 100%
+    var(--secondColor) 0%,
+    var(--fourthColor) 13%
   );
   display: flex;
   flex-direction: column;
@@ -31,7 +31,8 @@ code {
 }
 
 :root {
-  --firstColor: rgba(104, 84, 84, 1);
-  --secondColor: rgba(235, 213, 213, 1);
-  --thirdColor: rgba(234, 138, 138, 1);
+  --firstColor: rgb(8, 51, 88);
+  --secondColor: rgb(15, 68, 113);
+  --thirdColor: rgb(252, 60, 60);
+  --fourthColor: rgb(246, 246, 246);
 }
