@@ -27,13 +27,12 @@ export const AppContent = () => {
 
   const getMovieData = () => {
     const genreIdsJoined = genreIdsForUrl.join("|");
-    console.log(genreIdsJoined);
+
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&include_adult=${includeAdult}&include_video=false&page=&page=${randomPage}&primary_release_date.gte=${startYear}&primary_release_date.lte=${endYear}&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
     axios
       .get(url)
       .then((res) => {
         setMovieData(res.data);
-        console.log(res.data);
       })
       .then(() => {
         setFetchedMovies(true);
