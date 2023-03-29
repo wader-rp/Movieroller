@@ -22,7 +22,7 @@ export const AppContent = () => {
 
   const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
 
-  const randomPage = randomNumber(200);
+  const randomPage = randomNumber(30);
   const [startYear, endYear] = yearsRange;
 
   const getMovieData = () => {
@@ -41,7 +41,7 @@ export const AppContent = () => {
 
   const randomMovie = movieData && movieData.results[randomNumber(20)];
   const movieId = randomMovie && randomMovie.id;
-
+  console.log(randomMovie);
   return (
     <div className="app">
       <NavBar />

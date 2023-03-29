@@ -1,9 +1,6 @@
 .movie-results-container {
-  position: relative;
-  width: 100vw;
-  height: 78vh;
   display: flex;
-  padding: 2rem 5%;
+  padding: 1rem 1rem;
   flex-direction: row;
   background: linear-gradient(
     to right,
@@ -13,7 +10,6 @@
   );
 }
 .movie-results-container-bg {
-  position: relative;
   background-repeat: no-repeat;
   background-position: left 20rem top;
 }
@@ -37,7 +33,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  padding-left: 3rem;
+  padding-left: 2rem;
 }
 .title-year-text {
   font-family: "Orbitron", sans-serif;
@@ -49,20 +45,20 @@
 .genres {
   font-family: "Open Sans", sans-serif;
   letter-spacing: 1.5px;
-  padding: 0.5rem 0 0 0;
+
   font-size: 1rem;
   color: var(--fourthColor);
 }
 .overview {
   display: flex;
   align-items: center;
-  max-width: 75%;
+  max-width: 95%;
   padding: 2rem 0 2rem 0;
 }
 
 .overview-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 1em;
   color: var(--fourthColor);
 }
 
@@ -98,7 +94,6 @@
   width: 75rem;
   height: 17rem;
   padding: 0.5rem 2rem;
-  transition: ease-out 0.6s;
   border-radius: 10px;
   background-color: var(--secondColor);
   overflow: hidden;
@@ -180,4 +175,11 @@
   font-size: 0.7rem;
 
   color: rgb(195, 195, 195);
+}
+
+.footer-content {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
 }
