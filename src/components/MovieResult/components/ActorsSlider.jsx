@@ -4,18 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 const singleShiftValue = 450;
 
-export const ActorsSlider = ({ movieId, apiKey }) => {
-  const [cast, setCast] = useState([]);
+export const ActorsSlider = ({ crewAndCast }) => {
   const [containerShift, setContainerShift] = useState(0);
   const contentRef = useRef(null);
   const containerRef = useRef(null);
-
-  useEffect(() => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
-    axios.get(url).then((res) => {
-      setCast(res.data.cast);
-    });
-  }, []);
+  const cast = crewAndCast.cast;
 
   const handleArrowClick = (direction) => {
     switch (direction) {

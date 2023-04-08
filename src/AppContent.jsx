@@ -4,7 +4,7 @@ import { MovieResult } from "./components/MovieResult/MovieResult";
 import axios from "axios";
 import "./index.css";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { randomNumber } from "./helpers/randomPageGenerator";
 import FilterScreen from "./components/FilterScreen/FilterScreen";
 import { FiltersContext } from "./Contexts/FilterContext";
@@ -41,7 +41,7 @@ export const AppContent = () => {
 
   const randomMovie = movieData && movieData.results[randomNumber(20)];
   const movieId = randomMovie && randomMovie.id;
-  console.log(randomMovie);
+
   return (
     <div className="app">
       <NavBar />

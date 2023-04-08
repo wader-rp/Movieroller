@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./movieResultStyles.css";
 import { genres } from "../../data/MovieGenres";
 import axios from "axios";
@@ -11,7 +11,7 @@ import { CastDisplay } from "./components/CastDisplay/CastDisplay";
 import { ToWatchAndStreamings } from "./components/Footer/ToWatchAndStreamings";
 
 export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
-  const [crew, setCrew] = useState([]);
+  const [crewAndCast, setCrewAndCast] = useState();
 
   const randomMovieGenres = randomMovie && randomMovie.genre_ids;
   const genresNames = randomMovieGenres
@@ -21,9 +21,13 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
     axios.get(url).then((res) => {
-      setCrew(res.data.crew);
+      setCrewAndCast(res.data);
     });
-  }, []);
+  }, [movieId]);
+  // const addMovieToToWatchList = (
+  //     window.localStorage.setItem(randomMovie, crew)
+
+  // )
 
   return (
     <>
@@ -41,11 +45,11 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
             <MovieTitle randomMovie={randomMovie} />
             <span className="genres">{genresNames}</span>
             <RatingDisplay randomMovie={randomMovie} />
-            <CastDisplay apiKey={apiKey} movieId={movieId} />
+            {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
             <div className="overview">
               <span className="overview-text">{randomMovie.overview}</span>
             </div>
-            <ActorsSlider movieId={movieId} apiKey={apiKey} />
+            {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
           </div>
         </div>
       </div>
