@@ -12,13 +12,8 @@ import { FiltersContext } from "./Contexts/FilterContext";
 export const AppContent = () => {
   const [movieData, setMovieData] = useState(null);
 
-  const {
-    fetchedMovies,
-    setFetchedMovies,
-    yearsRange,
-    genreIdsForUrl,
-    includeAdult,
-  } = useContext(FiltersContext);
+  const { yearsRange, genreIdsForUrl, includeAdult } =
+    useContext(FiltersContext);
 
   const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
 
@@ -29,14 +24,9 @@ export const AppContent = () => {
     const genreIdsJoined = genreIdsForUrl.join("|");
 
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&include_adult=${includeAdult}&include_video=false&page=&page=${randomPage}&primary_release_date.gte=${startYear}&primary_release_date.lte=${endYear}&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
-    axios
-      .get(url)
-      .then((res) => {
-        setMovieData(res.data);
-      })
-      .then(() => {
-        setFetchedMovies(true);
-      });
+    axios.get(url).then((res) => {
+      setMovieData(res.data);
+    });
   };
 
   const randomMovie = movieData && movieData.results[randomNumber(20)];
@@ -46,7 +36,7 @@ export const AppContent = () => {
     <div className="app">
       <NavBar />
 
-      {!fetchedMovies ? (
+      {!movieData ? (
         <>
           <FilterScreen />
 

@@ -1,6 +1,7 @@
 .footer-content {
   display: flex;
   padding: 2rem 10rem;
+  height: var(--footerHeight);
   flex-direction: row;
   justify-content: space-evenly;
   font-family: "Orbitron", sans-serif;

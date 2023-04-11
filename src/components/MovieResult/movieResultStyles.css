@@ -1,4 +1,5 @@
 .movie-results-container {
+  position: relative;
   display: flex;
   padding: 1rem 1rem;
   flex-direction: row;

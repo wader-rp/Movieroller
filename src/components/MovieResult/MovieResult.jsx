@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./movieResultStyles.css";
+
 import { genres } from "../../data/MovieGenres";
 import axios from "axios";
 
@@ -9,9 +10,11 @@ import { ActorsSlider } from "./components/ActorsSlider";
 import { MovieTitle } from "./components/Title";
 import { CastDisplay } from "./components/CastDisplay/CastDisplay";
 import { ToWatchAndStreamings } from "./components/Footer/ToWatchAndStreamings";
+import { ToWatchDisplay } from "./components/ToWatchDisplay/ToWatchDisplay";
 
 export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   const [crewAndCast, setCrewAndCast] = useState();
+  const [displayToWatchList, setDisplayToWatchList] = useState(false);
 
   const randomMovieGenres = randomMovie && randomMovie.genre_ids;
   const genresNames = randomMovieGenres
@@ -24,36 +27,38 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
       setCrewAndCast(res.data);
     });
   }, [movieId]);
-  // const addMovieToToWatchList = (
-  //     window.localStorage.setItem(randomMovie, crew)
-
-  // )
 
   return (
     <>
-      <div
-        className="movie-results-container-bg"
-        style={{
-          backgroundImage: `url(
+      <div>
+        <div
+          className="movie-results-container-bg"
+          style={{
+            backgroundImage: `url(
           https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${randomMovie.poster_path}
         )`,
-        }}
-      >
-        <div className="movie-results-container">
-          <MoviePoster randomMovie={randomMovie} />
-          <div className="movie-info">
-            <MovieTitle randomMovie={randomMovie} />
-            <span className="genres">{genresNames}</span>
-            <RatingDisplay randomMovie={randomMovie} />
-            {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
-            <div className="overview">
-              <span className="overview-text">{randomMovie.overview}</span>
+          }}
+        >
+          <div className="movie-results-container">
+            <MoviePoster randomMovie={randomMovie} />
+            <div className="movie-info">
+              <MovieTitle randomMovie={randomMovie} />
+              <span className="genres">{genresNames}</span>
+              <RatingDisplay
+                randomMovie={randomMovie}
+                crewAndCast={crewAndCast}
+              />
+              {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
+              <div className="overview">
+                <span className="overview-text">{randomMovie.overview}</span>
+              </div>
+              {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
             </div>
-            {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
           </div>
         </div>
       </div>
-      <ToWatchAndStreamings />
+      <ToWatchDisplay expanded={displayToWatchList} />
+      <ToWatchAndStreamings toggleToWatch={setDisplayToWatchList} />
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import "../movieResultStyles.css";
 import { useState, useRef, useEffect } from "react";
-import axios from "axios";
+
 const singleShiftValue = 450;
 
 export const ActorsSlider = ({ crewAndCast }) => {
