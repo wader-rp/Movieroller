@@ -1,10 +1,18 @@
 import React from "react";
 import "./toWatch.css";
+import { MoviesToWatch } from "./MoviesToWatch";
 
-export const ToWatchDisplay = ({ expanded }) => {
+export const ToWatchDisplay = ({
+  expanded,
+  movies,
+  setMovies,
+  triggerExpand,
+}) => {
   return (
     <div className={expanded ? "grey-bg" : "hidden"}>
-      <div className={expanded ? "to-watch" : "to-watch-hidden"}>ELO</div>
+      <div className={expanded ? "to-watch" : "to-watch-hidden"}>
+        <MoviesToWatch expanded={expanded} triggerExpand={triggerExpand} />
+      </div>
     </div>
   );
 };

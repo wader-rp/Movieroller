@@ -1,0 +1,31 @@
+.movies-to-watch-container {
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+}
+.movie {
+  border: 3px solid black;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.movie-poster {
+  width: 150px;
+  max-height: 250px;
+}
+
+.delete-button {
+  cursor: pointer;
+}
+
+.button {
+  width: 10px;
+  height: 10px;
+}

@@ -57,7 +57,10 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
           </div>
         </div>
       </div>
-      <ToWatchDisplay expanded={displayToWatchList} />
+      <ToWatchDisplay
+        expanded={displayToWatchList}
+        triggerExpand={() => setDisplayToWatchList((prev) => !prev)}
+      />
       <ToWatchAndStreamings toggleToWatch={setDisplayToWatchList} />
     </>
   );
