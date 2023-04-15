@@ -4,14 +4,17 @@
   align-items: flex-start;
   gap: 3rem;
   padding: 0 0 0 1rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 h5 {
   color: var(--fourthColor);
-  letter-spacing: 1px;
+  font-size: 0.75em;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
 span {
   color: var(--fourthColor);
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }

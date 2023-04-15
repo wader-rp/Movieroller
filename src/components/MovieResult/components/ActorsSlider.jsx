@@ -1,52 +1,12 @@
 import React from "react";
 import "../movieResultStyles.css";
-import { useState, useRef, useEffect } from "react";
-import axios from "axios";
-const singleShiftValue = 450;
 
-export const ActorsSlider = ({ movieId, apiKey }) => {
-  const [cast, setCast] = useState([]);
-  const [containerShift, setContainerShift] = useState(0);
-  const contentRef = useRef(null);
-  const containerRef = useRef(null);
+import { useSlider } from "../../../helpers/useSlider";
 
-  useEffect(() => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
-    axios.get(url).then((res) => {
-      setCast(res.data.cast);
-    });
-  }, []);
-
-  const handleArrowClick = (direction) => {
-    switch (direction) {
-      case "left":
-        setContainerShift((currentShift) => {
-          const newValue = currentShift + singleShiftValue;
-          if (newValue >= 0) {
-            return 0;
-          }
-
-          return currentShift + singleShiftValue;
-        });
-
-        break;
-      case "right":
-        setContainerShift((currentShift) => {
-          const newValue = currentShift - singleShiftValue;
-          const maxShift =
-            -contentRef.current.offsetWidth + containerRef.current.offsetWidth;
-
-          if (newValue < maxShift) {
-            return maxShift;
-          }
-
-          return currentShift - singleShiftValue;
-        });
-        break;
-      default:
-        break;
-    }
-  };
+export const ActorsSlider = ({ crewAndCast }) => {
+  const cast = crewAndCast.cast;
+  const { containerRef, contentRef, containerShift, handleArrowClick } =
+    useSlider();
 
   return (
     <div className="actors-slider-container" ref={containerRef}>

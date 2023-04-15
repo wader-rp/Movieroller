@@ -1,0 +1,25 @@
+.footer-content {
+  display: flex;
+  padding: 2rem 10rem;
+  height: var(--footerHeight);
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "Orbitron", sans-serif;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 5px;
+  padding: 2px 2px;
+}
+.options:hover {
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.options-text {
+  letter-spacing: 5px;
+  color: var(--fourthColor);
+  text-shadow: 0 0 10px var(--firstColor);
+}

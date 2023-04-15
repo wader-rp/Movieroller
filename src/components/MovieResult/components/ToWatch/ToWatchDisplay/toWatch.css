@@ -1,0 +1,36 @@
+.to-watch-hidden {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  bottom: var(--footerHeight);
+}
+
+.to-watch {
+  z-index: 10000;
+  position: absolute;
+  left: 5%;
+  bottom: calc(var(--footerHeight) + 50px);
+  height: 70%;
+  width: 90%;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background-color: var(--fourthColor);
+  border-radius: 10px;
+  transition: ease-in 0.3s;
+}
+.hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.grey-bg {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 68, 113, 0.9);
+}

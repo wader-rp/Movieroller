@@ -1,18 +1,9 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import "./castDisplay.css";
 
-export const CastDisplay = ({ movieId, apiKey }) => {
-  const [crew, setCrew] = useState([]);
-  useEffect(() => {
-    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
-    axios.get(url).then((res) => {
-      setCrew(res.data.crew);
-    });
-  }, []);
-
+export const CastDisplay = ({ crewAndCast }) => {
+  const crew = crewAndCast.crew;
   const crewArr = crew.map((persons) => persons);
-  console.log(crewArr);
+
   const directorName = crewArr.find((person) => person.job === "Director");
   const writerName = crewArr.find((person) => person.job === "Writer");
   const screenPlay = crewArr.find((person) => person.job === "Screenplay");
