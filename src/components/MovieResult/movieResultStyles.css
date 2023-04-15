@@ -1,6 +1,15 @@
+.movie-results {
+  display: flex;
+  flex-direction: row;
+}
+
 .movie-results-container {
   position: relative;
   display: flex;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 75vh;
   padding: 1rem 1rem;
   flex-direction: row;
   background: linear-gradient(
@@ -17,14 +26,14 @@
 .movie-poster {
   display: flex;
   max-width: 400px;
-
+  height: 100%;
   justify-content: flex-start;
-  flex-direction: column;
+
   flex-grow: 1;
 }
 .poster-image {
   width: 400px;
-
+  height: 580px;
   border-radius: 5px;
   box-shadow: 0 0 15px var(--firstColor);
 }
@@ -36,6 +45,7 @@
   justify-content: flex-start;
   flex-direction: column;
   padding-left: 2rem;
+  max-width: 75%;
 }
 .title-year-text {
   font-family: "Orbitron", sans-serif;
@@ -68,7 +78,7 @@
   flex-grow: 1.5;
 } */
 
-.movie-rating-with-add {
+.movie-rating-container {
   display: flex;
   flex-direction: row;
   min-width: 100%;
@@ -85,6 +95,15 @@
   flex-direction: row;
   gap: 0.75rem;
 }
+
+.title-and-add {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
 .add-icon {
   display: flex;
   align-items: center;

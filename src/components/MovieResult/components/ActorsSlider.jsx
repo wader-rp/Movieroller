@@ -1,45 +1,12 @@
 import React from "react";
 import "../movieResultStyles.css";
-import { useState, useRef, useEffect } from "react";
 
-const singleShiftValue = 450;
+import { useSlider } from "../../../helpers/useSlider";
 
 export const ActorsSlider = ({ crewAndCast }) => {
-  const [containerShift, setContainerShift] = useState(0);
-  const contentRef = useRef(null);
-  const containerRef = useRef(null);
   const cast = crewAndCast.cast;
-
-  const handleArrowClick = (direction) => {
-    switch (direction) {
-      case "left":
-        setContainerShift((currentShift) => {
-          const newValue = currentShift + singleShiftValue;
-          if (newValue >= 0) {
-            return 0;
-          }
-
-          return currentShift + singleShiftValue;
-        });
-
-        break;
-      case "right":
-        setContainerShift((currentShift) => {
-          const newValue = currentShift - singleShiftValue;
-          const maxShift =
-            -contentRef.current.offsetWidth + containerRef.current.offsetWidth;
-
-          if (newValue < maxShift) {
-            return maxShift;
-          }
-
-          return currentShift - singleShiftValue;
-        });
-        break;
-      default:
-        break;
-    }
-  };
+  const { containerRef, contentRef, containerShift, handleArrowClick } =
+    useSlider();
 
   return (
     <div className="actors-slider-container" ref={containerRef}>

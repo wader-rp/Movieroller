@@ -7,18 +7,14 @@
 
 .to-watch {
   z-index: 10000;
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
   position: absolute;
   left: 5%;
   bottom: calc(var(--footerHeight) + 50px);
   height: 70%;
   width: 90%;
-  padding: 1em 1em;
-  background-color: white;
-  border-radius: 5px;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background-color: var(--fourthColor);
+  border-radius: 10px;
   transition: ease-in 0.3s;
 }
 .hidden {
@@ -31,7 +27,6 @@
 
 .grey-bg {
   z-index: 999;
-
   position: absolute;
   top: 0;
   left: 0;

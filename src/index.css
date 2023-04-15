@@ -20,6 +20,8 @@ code {
     var(--secondColor) 0%,
     var(--fourthColor) 13%
   );
+
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
