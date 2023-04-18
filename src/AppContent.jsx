@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { randomNumber } from "./helpers/randomPageGenerator";
 import FilterScreen from "./components/FilterScreen/FilterScreen";
 import { FiltersContext } from "./Contexts/FilterContext";
-import { useAxios } from "./helpers/useAxios";
+import { useAxios } from "./hooks/useAxios";
 
 export const AppContent = () => {
   const { yearsRange, genreIdsForUrl, includeAdult } =
@@ -23,7 +23,6 @@ export const AppContent = () => {
   const { data: movieData, getData, loading, error } = useAxios(url);
 
   const randomMovie = movieData && movieData.results[randomNumber(20)];
-  const movieId = randomMovie && randomMovie.id;
 
   return (
     <div className="app">
@@ -40,11 +39,7 @@ export const AppContent = () => {
       ) : (
         <div className="result-content">
           {randomMovie && (
-            <MovieResult
-              randomMovie={randomMovie}
-              movieId={movieId}
-              apiKey={apiKey}
-            />
+            <MovieResult randomMovie={randomMovie} apiKey={apiKey} />
           )}
         </div>
       )}

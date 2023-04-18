@@ -1,22 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./moviesToWatch.css";
 import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
+import { LocalStorageContext } from "../../../../Contexts/LocalStorageContext";
 
-export const OnHoverIcons = ({ index, movies, setMovies }) => {
-  const removeMovie = (index) => {
-    const moviesCopy = [...movies];
-    const splicedCopy = moviesCopy.filter((_, i) => i !== index);
-    const strigifyCopy = JSON.stringify(splicedCopy);
-    setMovies(splicedCopy);
-    localStorage.setItem("toWatch", [strigifyCopy]);
-  };
-
+export const OnHoverIcons = ({ id }) => {
+  const { removeMovie } = useContext(LocalStorageContext);
   return (
     <div className="movie-icons">
       <div className="movie-icon-wrapper">
         <DeleteOutlined
           className="movie-icon"
-          onClick={() => removeMovie(index)}
+          onClick={() => removeMovie(id)}
         />
         <p className="movie-icon-text">Delete</p>
       </div>

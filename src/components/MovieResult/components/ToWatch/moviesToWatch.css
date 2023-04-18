@@ -52,7 +52,7 @@
   z-index: 2;
   opacity: 0;
   color: white;
-  transition: opacity 600ms ease;
+  transition: opacity 300ms ease;
 }
 
 .movie:hover:after,

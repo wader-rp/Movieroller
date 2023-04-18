@@ -1,8 +1,12 @@
 import { PlusSquareOutlined } from "@ant-design/icons";
-import React from "react";
-import { addMovieToToWatchList } from "../localStorageManager";
+import React, { useContext } from "react";
+import { LocalStorageContext } from "../../../Contexts/LocalStorageContext";
 
 export const MovieTitle = ({ randomMovie, crewAndCast }) => {
+  const movieData = { ...randomMovie, ...crewAndCast };
+
+  const { addMovie } = useContext(LocalStorageContext);
+
   return (
     <div className="title-and-add">
       <div className="title-year-text">
@@ -11,10 +15,7 @@ export const MovieTitle = ({ randomMovie, crewAndCast }) => {
           4
         )})`}
       </div>
-      <div
-        className="add-icon"
-        onClick={() => addMovieToToWatchList(randomMovie, crewAndCast)}
-      >
+      <div className="add-icon" onClick={() => addMovie(movieData)}>
         <PlusSquareOutlined className="add-to-watch" />
         <h5>{`Add to watch list`}</h5>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "../movieResultStyles.css";
 
-import { useSlider } from "../../../helpers/useSlider";
+import { useSlider } from "../../../hooks/useSlider";
 
 export const ActorsSlider = ({ crewAndCast }) => {
   const cast = crewAndCast.cast;

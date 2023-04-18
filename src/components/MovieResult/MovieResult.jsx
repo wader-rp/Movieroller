@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "./movieResultStyles.css";
 import { genres } from "../../data/MovieGenres";
-import { RatingDisplay } from "./components/RatingDisplay";
-import { MoviePoster } from "./components/MoviePoster";
+import { useAxios } from "../../hooks/useAxios";
 import { ActorsSlider } from "./components/ActorsSlider";
-import { MovieTitle } from "./components/Title";
 import { CastDisplay } from "./components/CastDisplay/CastDisplay";
 import { ToWatchAndStreamings } from "./components/Footer/ToWatchAndStreamings";
-import { useAxios } from "../../helpers/useAxios";
+import { MoviePoster } from "./components/MoviePoster";
+import { RatingDisplay } from "./components/RatingDisplay";
+import { MovieTitle } from "./components/Title";
 import { ToWatchDisplay } from "./components/ToWatch/ToWatchDisplay/ToWatchDisplay";
+import "./movieResultStyles.css";
 
-export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
+export const MovieResult = ({ randomMovie, apiKey }) => {
   const [displayToWatchList, setDisplayToWatchList] = useState(false);
 
   const randomMovieGenres = randomMovie && randomMovie.genre_ids;
@@ -18,7 +18,7 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
     .map((id) => genres.find((genre) => genre.id === id).name)
     .join(" / ");
 
-  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
+  const url = `https://api.themoviedb.org/3/movie/${randomMovie.id}/credits?api_key=${apiKey}&language=en-US`;
   const { data: crewAndCast, getData: getCrewAndCast } = useAxios(url);
 
   useEffect(() => {
