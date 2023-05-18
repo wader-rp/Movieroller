@@ -13,6 +13,7 @@ const FilterScreen = () => {
   const { setYearsRange, yearsRange, includeAdult, genreIdsForUrl } =
     useContext(FiltersContext);
   const apiKey = process.env.REACT_APP_TMDB_FROM_FILTER_KEY;
+
   const navigate = useNavigate();
   const [startYear, endYear] = yearsRange;
   const genreIdsJoined = genreIdsForUrl.join("|");

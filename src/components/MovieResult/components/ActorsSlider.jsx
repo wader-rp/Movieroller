@@ -7,7 +7,7 @@ export const ActorsSlider = ({ crewAndCast }) => {
   const cast = crewAndCast.cast;
   const { containerRef, contentRef, containerShift, handleArrowClick } =
     useSlider();
-  console.log(crewAndCast);
+
   return (
     <div className="actors-slider-container" ref={containerRef}>
       <div

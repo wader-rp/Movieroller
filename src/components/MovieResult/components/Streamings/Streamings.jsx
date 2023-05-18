@@ -42,7 +42,7 @@ export const Streamings = ({ triggerExpand, movieId }) => {
         });
     }
   }, [countryCode, movieId]);
-
+  console.log(availableStreamings);
   return (
     <div className="streamings-wrapper">
       <div className="streamings-container">
@@ -61,7 +61,7 @@ export const Streamings = ({ triggerExpand, movieId }) => {
             ))}
           </Select>
         </div>
-        {availableStreamings ?? (
+        {availableStreamings && (
           <AvailableStreamingsDisplay
             availableStreamings={availableStreamings}
           />

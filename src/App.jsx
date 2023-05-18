@@ -22,9 +22,7 @@ const router = createBrowserRouter(
         errorElement={
           <img
             alt="null"
-            src={
-              "https://i.etsystatic.com/25272370/r/il/699e25/3179215036/il_1140xN.3179215036_rf9g.jpg"
-            }
+            src="https://thumbs.dreamstime.com/b/error-rubber-stamp-word-error-inside-illustration-109026446.jpg"
           />
         }
       />
