@@ -1,16 +1,16 @@
-.to-watch-hidden {
+.streamings-hidden {
   position: absolute;
   height: 0;
   overflow: hidden;
   bottom: var(--footerHeight);
 }
 
-.to-watch {
+.streamings {
   z-index: 10000;
   position: absolute;
   left: 5%;
   bottom: calc(var(--footerHeight) + 50px);
-  height: 75%;
+  height: 70%;
   width: 90%;
   padding: 0.5em 0.5em 0.5em 0.5em;
   background-color: var(--fourthColor);

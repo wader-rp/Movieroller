@@ -54,10 +54,3 @@ h1 {
   transform: scale(1.1);
   cursor: pointer;
 }
-
-.result-content {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}

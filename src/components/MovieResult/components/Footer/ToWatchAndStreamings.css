@@ -1,6 +1,7 @@
 .footer-content {
   display: flex;
-  padding: 2rem 10rem;
+  padding: 3rem 10rem;
+  gap: 10rem;
   height: var(--footerHeight);
   flex-direction: row;
   justify-content: space-evenly;
@@ -17,9 +18,12 @@
   cursor: pointer;
   padding: 0 2px;
 }
-
+.options-arrow {
+  color: var(--firstColor);
+}
 .options-text {
   letter-spacing: 5px;
-  color: var(--fourthColor);
-  text-shadow: 0 0 10px var(--firstColor);
+  font-weight: bold;
+  color: var(--firstColor);
+  text-shadow: 0 0 5px var(--fourthColor);
 }

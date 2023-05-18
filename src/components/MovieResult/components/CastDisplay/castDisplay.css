@@ -14,7 +14,7 @@ h5 {
   margin: 0;
 }
 
-span {
+.cast-names {
   color: var(--fourthColor);
   letter-spacing: 2px;
 }

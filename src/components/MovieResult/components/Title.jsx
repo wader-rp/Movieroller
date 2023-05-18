@@ -1,6 +1,6 @@
 import { PlusSquareOutlined } from "@ant-design/icons";
 import React, { useContext } from "react";
-import { LocalStorageContext } from "../../../Contexts/LocalStorageContext";
+import { LocalStorageContext } from "../../../contexts/LocalStorageContext";
 
 export const MovieTitle = ({ randomMovie, crewAndCast }) => {
   const movieData = { ...randomMovie, ...crewAndCast };

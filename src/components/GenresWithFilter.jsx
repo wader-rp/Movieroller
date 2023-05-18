@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import "./styles.css";
-import { genres } from "../data/MovieGenres";
 import classNames from "classnames";
-import { FiltersContext } from "../Contexts/FilterContext";
+import React, { useContext } from "react";
+import { FiltersContext } from "../contexts/FilterContext";
+import { allGenres } from "../data/movieGenres";
+import "./styles.css";
 
 export const GenresWithFilter = () => {
   const { genreIdsForUrl, setGenreIdsForUrl, triggerGenre } =
@@ -10,7 +10,7 @@ export const GenresWithFilter = () => {
   return (
     <div className="genres-position">
       <div className="genres-bar">
-        {genres.map((genre) => (
+        {allGenres.map((genre) => (
           <GenreButton
             key={genre.name}
             name={genre.name}

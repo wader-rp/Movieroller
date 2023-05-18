@@ -27,6 +27,9 @@ code {
   align-items: center;
   overflow: hidden;
 }
+a {
+  text-decoration: none;
+}
 
 :root {
   --firstColor: rgb(8, 51, 88);

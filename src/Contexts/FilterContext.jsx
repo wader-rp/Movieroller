@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, createContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const FiltersContext = createContext(null);
 
@@ -29,7 +28,6 @@ export const FilterContextProvider = ({ children }) => {
       value={{
         includeAdult,
         setIncludeAdult,
-
         yearsRange,
         setYearsRange,
         genreIdsForUrl,

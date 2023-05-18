@@ -1,6 +1,7 @@
 import React from "react";
 import { useHover } from "../../../../hooks/useHover";
 import { OnHoverIcons } from "./OnHoverIcons";
+import "./moviesToWatch.css";
 
 export const SingleMovieToWatch = ({ movie }) => {
   const { handleMouseOver, handleMouseOut, isHovering } = useHover();
@@ -16,7 +17,9 @@ export const SingleMovieToWatch = ({ movie }) => {
         className="movie-poster"
       />
       {isHovering && <OnHoverIcons id={movie.id} />}
-      <span className="movie-title">{movie.title}</span>
+      <div className="movie-title-wrapper">
+        <span className="movie-title">{movie.title}</span>
+      </div>
     </div>
   );
 };

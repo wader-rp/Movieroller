@@ -1,0 +1,29 @@
+.stream-icon {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 25%;
+  box-shadow: 0 0 5px black;
+}
+
+.stream-icon:hover {
+  cursor: pointer;
+  transform: scale(0.99);
+  box-shadow: 0 0 5px black inset;
+}
+
+.streaming-module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.single-stream-type {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.single-stream-type span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+}

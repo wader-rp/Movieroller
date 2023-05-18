@@ -3,10 +3,10 @@ import { useSlider } from "../../../../hooks/useSlider";
 import "../../movieResultStyles.css";
 import { SingleMovieToWatch } from "./SingleMovieToWatch";
 import "./moviesToWatch.css";
+import "../../../../styles/buttons.css";
+import { LocalStorageContext } from "../../../../contexts/LocalStorageContext";
 
-import { LocalStorageContext } from "../../../../Contexts/LocalStorageContext";
-
-export const MoviesToWatch = ({ triggerExpand, expanded }) => {
+export const MoviesToWatch = ({ triggerExpand }) => {
   const { moviesToWatch, setMoviesToWatch } = useContext(LocalStorageContext);
   const { containerRef, contentRef, containerShift, handleArrowClick } =
     useSlider();
@@ -29,16 +29,14 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
           style={{ left: containerShift }}
           ref={contentRef}
         >
-          {moviesToWatch.map((movie) => {
-            return (
-              <SingleMovieToWatch
-                key={movie.id}
-                movie={movie}
-                setMovies={setMoviesToWatch}
-                movies={moviesToWatch}
-              />
-            );
-          })}
+          {moviesToWatch.map((movie) => (
+            <SingleMovieToWatch
+              key={movie.id}
+              movie={movie}
+              setMovies={setMoviesToWatch}
+              movies={moviesToWatch}
+            />
+          ))}
         </div>
         <div
           className="slider-arrow right"
@@ -48,10 +46,10 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
         </div>
       </div>
       <div className="buttons-wrapper">
-        <button onClick={handleClearAll} className="button-to-watch clear-all">
+        <button onClick={handleClearAll} className="button clear-all">
           Clear All
         </button>
-        <button onClick={triggerExpand} className="button-to-watch exit">
+        <button onClick={triggerExpand} className="button exit">
           Exit
         </button>
       </div>

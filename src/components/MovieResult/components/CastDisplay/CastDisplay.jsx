@@ -12,20 +12,20 @@ export const CastDisplay = ({ crewAndCast }) => {
     <div className="cast-display-container">
       {directorName ? (
         <div>
-          <span>{directorName.name}</span>
+          <span className="cast-names">{directorName.name}</span>
 
           <h5>Director</h5>
         </div>
       ) : null}
       {writerName ? (
         <div>
-          <span>{writerName.name}</span>
+          <span className="cast-names">{writerName.name}</span>
           <h5>Writer</h5>
         </div>
       ) : null}
       {screenPlay ? (
         <div>
-          <span>{screenPlay.name}</span>
+          <span className="cast-names">{screenPlay.name}</span>
           <h5>Screenplay</h5>
         </div>
       ) : null}

@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../components/styles.css";
 
 const NavBar = () => {
   return (
     <div className="navbar">
-      <div className="navbar-title">Movie Roller</div>
+      <Link to="/">
+        <div className="navbar-title">Movie Roller</div>
+      </Link>
     </div>
   );
 };

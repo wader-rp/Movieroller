@@ -1,5 +1,5 @@
 .arrow {
-  color: white;
+  color: var(--firstColor);
   rotate: -90deg;
   transform: scaleY(3);
 }
