@@ -17,6 +17,7 @@ export const Streamings = ({ triggerExpand, movieId }) => {
   useEffect(() => {
     if (countryCode) {
       const lowerCaseCountryCode = countryCode.toLowerCase();
+      const apiKey = process.env.REACT_APP_RAPIDAPI_KEY;
       axios({
         method: "get",
         url: "https://streaming-availability.p.rapidapi.com/v2/get/basic",
@@ -27,8 +28,7 @@ export const Streamings = ({ triggerExpand, movieId }) => {
         },
         headers: {
           "content-type": "application/octet-stream",
-          "X-RapidAPI-Key":
-            "70da0b8430msh14b6e6c5051da74p12735ejsnfc0632e91560",
+          "X-RapidAPI-Key": apiKey,
           "X-RapidAPI-Host": "streaming-availability.p.rapidapi.com",
         },
       })
@@ -41,7 +41,6 @@ export const Streamings = ({ triggerExpand, movieId }) => {
           console.log(err);
         });
     }
-    return;
   }, [countryCode, movieId]);
 
   return (

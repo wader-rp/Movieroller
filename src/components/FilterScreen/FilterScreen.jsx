@@ -12,7 +12,7 @@ import { getMarks } from "./helpers";
 const FilterScreen = () => {
   const { setYearsRange, yearsRange, includeAdult, genreIdsForUrl } =
     useContext(FiltersContext);
-  const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
+  const apiKey = process.env.REACT_APP_TMDB_FROM_FILTER_KEY;
   const navigate = useNavigate();
   const [startYear, endYear] = yearsRange;
   const genreIdsJoined = genreIdsForUrl.join("|");

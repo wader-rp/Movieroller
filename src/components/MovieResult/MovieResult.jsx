@@ -75,7 +75,7 @@ export const MovieResult = () => {
 };
 
 export const movieLoader = async ({ params }) => {
-  const apiKey = "63b99da2517b8f9e90eb5fe15729a57e";
+  const apiKey = process.env.REACT_APP_TMDB_FROM_FILTER_KEY;
   const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${apiKey}&language=en-US`;
   const crewAndCastUrl = `https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=${apiKey}&language=en-US`;
 
