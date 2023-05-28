@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { FiltersContext } from "../../contexts/FilterContext";
 import { randomNumber } from "../../helpers/randomPageGenerator";
 import { useAxios } from "../../hooks/useAxios";
-import { GenresWithFilter } from "../GenresWithFilter";
-import { IncludeAdult } from "../IncludeAdult";
+import { GenresWithFilter } from "./GenresContainer/GenresWithFilter";
+import { IncludeAdult } from "./IncludeAdult";
 import "./filterScreenStyles.css";
-import { getMarks } from "./helpers";
+import "../../styles/buttons.css";
+import { getMarks } from "../../helpers/helpers";
 
 const FilterScreen = () => {
   const { setYearsRange, yearsRange, includeAdult, genreIdsForUrl } =
@@ -70,7 +71,7 @@ const FilterScreen = () => {
             </div>
           </div>
           <button
-            className="roll-button"
+            className="button roll-button"
             onClick={() => getTempData(tempDataUrl)}
           >
             ROLL!

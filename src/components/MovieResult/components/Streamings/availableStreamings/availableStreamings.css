@@ -10,3 +10,9 @@
   transform: scale(0.99);
   box-shadow: 0 0 5px black inset;
 }
+
+.streamings-position {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+}

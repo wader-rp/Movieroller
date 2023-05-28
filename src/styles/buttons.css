@@ -1,13 +1,13 @@
 .button {
   font-family: "Orbitron", sans-serif;
-  font-size: 20px;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   padding: 0.7rem 1.5rem;
   width: max-content;
   color: var(--fourthColor);
   background-color: var(--secondColor);
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: var(--borderRadius);
   border-style: none;
   cursor: pointer;
   transition-duration: 0.3s;
@@ -19,5 +19,18 @@
 }
 
 .button-delete {
+  cursor: pointer;
+}
+
+.roll-button {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  background-color: var(--thirdColor);
+  color: var(--firstColor);
+  letter-spacing: 0.5rem;
+}
+
+.roll-button:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }

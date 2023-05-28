@@ -1,10 +1,12 @@
-import { Select } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./streamings.css";
-import "../../../../styles/buttons.css";
+
 import { countryCodes } from "./countryCodes";
 import { AvailableStreamingsDisplay } from "./availableStreamings/AvailableStreamings";
+
+import { Select } from "antd";
+import "./streamings.css";
+import "../../../../styles/buttons.css";
 
 export const Streamings = ({ triggerExpand, movieId }) => {
   const [countryCode, setCountryCode] = useState("");
@@ -42,7 +44,7 @@ export const Streamings = ({ triggerExpand, movieId }) => {
         });
     }
   }, [countryCode, movieId]);
-  console.log(availableStreamings);
+
   return (
     <div className="streamings-wrapper">
       <div className="streamings-container">

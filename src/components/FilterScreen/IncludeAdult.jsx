@@ -1,7 +1,7 @@
 import { Switch } from "antd";
 import classNames from "classnames";
 import React, { useContext } from "react";
-import { FiltersContext } from "../contexts/FilterContext";
+import { FiltersContext } from "../../contexts/FilterContext";
 
 export const IncludeAdult = () => {
   const { includeAdult, setIncludeAdult } = useContext(FiltersContext);

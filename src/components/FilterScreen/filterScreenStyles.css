@@ -8,20 +8,19 @@
 }
 .description {
   border-bottom: 2px solid var(--firstColor);
-  width: 80%;
+  max-width: 80%;
   text-align: center;
   color: var(--firstColor);
-  margin: 1rem 0 0 0;
   font-family: "Orbitron", sans-serif;
   letter-spacing: 2px;
   font-size: 1.5em;
   text-shadow: 0.5px 0.5px 1.5px black;
-  padding: 0 0 2rem;
+  padding: 0 0 1rem;
 }
 .genres-position {
-  min-width: 650px;
-  max-width: 750px;
-  width: 750px;
+  min-width: 65%;
+  max-width: 12rem;
+
   padding: 2rem;
   border-radius: 1.2rem;
   box-shadow: -1px -1px 12px var(--firstColor) inset;

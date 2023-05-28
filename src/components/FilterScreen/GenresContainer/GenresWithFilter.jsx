@@ -1,8 +1,7 @@
-import classNames from "classnames";
 import React, { useContext } from "react";
-import { FiltersContext } from "../contexts/FilterContext";
-import { allGenres } from "../data/movieGenres";
-import "./styles.css";
+import { FiltersContext } from "../../../contexts/FilterContext";
+import { allGenres } from "../../../data/movieGenres";
+import { GenreButton } from "./GenreButton";
 
 export const GenresWithFilter = () => {
   const { genreIdsForUrl, setGenreIdsForUrl, triggerGenre } =
@@ -26,18 +25,5 @@ export const GenresWithFilter = () => {
         </button>
       </div>
     </div>
-  );
-};
-
-const GenreButton = ({ name, onClick, isChecked }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={classNames("genre-btn", {
-        "genre-btn-checked": isChecked,
-      })}
-    >
-      {name}
-    </button>
   );
 };
