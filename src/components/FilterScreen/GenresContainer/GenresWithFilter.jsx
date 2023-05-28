@@ -6,6 +6,7 @@ import { GenreButton } from "./GenreButton";
 export const GenresWithFilter = () => {
   const { genreIdsForUrl, setGenreIdsForUrl, triggerGenre } =
     useContext(FiltersContext);
+
   return (
     <div className="genres-position">
       <div className="genres-bar">
@@ -18,7 +19,7 @@ export const GenresWithFilter = () => {
           />
         ))}
         <button
-          className="genre-btn clear-button"
+          className="genre-button clear-button"
           onClick={() => setGenreIdsForUrl([])}
         >
           Clear All

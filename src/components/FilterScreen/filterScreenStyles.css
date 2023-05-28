@@ -35,32 +35,6 @@
   margin: 0 0 5px 0;
 }
 
-.genre-btn {
-  background-color: white;
-  font-family: "Orbitron", sans-serif;
-  letter-spacing: 2px;
-  padding: 7px;
-  color: var(--firstColor);
-  font-weight: bold;
-  border-radius: 20px;
-  border-style: none;
-  cursor: pointer;
-  transition-duration: 0.3s;
-
-  box-shadow: 3px 3px 7px var(--firstColor);
-}
-.genre-btn:hover {
-  transform: scale(0.86);
-}
-.genre-btn-checked {
-  background-color: var(--firstColor);
-  color: var(--thirdColor);
-}
-.genre-btn .clear-button {
-  padding: 1px;
-  font-size: 1px;
-}
-
 .ant-switch {
   background-color: var(--firstColor);
   font-family: "Orbitron", sans-serif;
