@@ -10,6 +10,8 @@ export const OnHoverIcons = ({ index, movies, setMovies }) => {
     localStorage.setItem("toWatch", [strigifyCopy]);
   };
 
+  //TODO: add info functionality
+
   return (
     <div className="movie-icons">
       <div className="movie-icon-wrapper">
