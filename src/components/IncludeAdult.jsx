@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Switch } from "antd";
 import classNames from "classnames";
 import { FiltersContext } from "../Contexts/FilterContext";
@@ -11,8 +11,8 @@ export const IncludeAdult = () => {
   return (
     <div className="adult-switch-spacing">
       <Switch
-        unCheckedChildren={"Allow adult content"}
-        checkedChildren={"Adult content"}
+        unCheckedChildren="Allow adult content"
+        checkedChildren="Adult content"
         checked={includeAdult}
         onChange={adultContentSwitch}
         className={classNames("adult-switch", {

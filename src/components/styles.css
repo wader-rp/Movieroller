@@ -33,6 +33,7 @@ h1 {
   font-weight: Bolder;
   text-shadow: 0 0 5px hsl(0, 100%, 50%);
   font-family: "Orbitron", sans-serif;
+  cursor: pointer;
 }
 
 .roll-button {

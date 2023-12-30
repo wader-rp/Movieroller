@@ -1,4 +1,3 @@
-import React from "react";
 import "./moviesToWatch.css";
 import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
 

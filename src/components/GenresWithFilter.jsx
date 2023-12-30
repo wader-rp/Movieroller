@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./styles.css";
 import { genres } from "../data/MovieGenres";
 import classNames from "classnames";
@@ -7,6 +7,7 @@ import { FiltersContext } from "../Contexts/FilterContext";
 export const GenresWithFilter = () => {
   const { genreIdsForUrl, setGenreIdsForUrl, triggerGenre } =
     useContext(FiltersContext);
+
   return (
     <div className="genres-position">
       <div className="genres-bar">
@@ -29,15 +30,13 @@ export const GenresWithFilter = () => {
   );
 };
 
-const GenreButton = ({ name, onClick, isChecked }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={classNames("genre-btn", {
-        "genre-btn-checked": isChecked,
-      })}
-    >
-      {name}
-    </button>
-  );
-};
+const GenreButton = ({ name, onClick, isChecked }) => (
+  <button
+    onClick={onClick}
+    className={classNames("genre-btn", {
+      "genre-btn-checked": isChecked,
+    })}
+  >
+    {name}
+  </button>
+);

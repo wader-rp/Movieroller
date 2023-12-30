@@ -3,7 +3,7 @@
   padding: 2rem 10rem;
   height: var(--footerHeight);
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   font-family: "Orbitron", sans-serif;
 }
 .options {

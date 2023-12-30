@@ -10,25 +10,24 @@ export const CastDisplay = ({ crewAndCast }) => {
 
   return (
     <div className="cast-display-container">
-      {directorName ? (
+      {directorName && (
         <div>
           <span>{directorName.name}</span>
-
           <h5>Director</h5>
         </div>
-      ) : null}
-      {writerName ? (
+      )}
+      {writerName && (
         <div>
           <span>{writerName.name}</span>
           <h5>Writer</h5>
         </div>
-      ) : null}
-      {screenPlay ? (
+      )}
+      {screenPlay && (
         <div>
           <span>{screenPlay.name}</span>
           <h5>Screenplay</h5>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

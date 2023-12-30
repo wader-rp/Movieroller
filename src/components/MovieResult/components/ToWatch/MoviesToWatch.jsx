@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./moviesToWatch.css";
 import "../../movieResultStyles.css";
 import { useSlider } from "../../../../helpers/useSlider";
@@ -19,16 +19,8 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
     }
   }, [expanded]);
 
-  // const removeMovie = (index) => {
-  //   const moviesCopy = [...movies];
-  //   const splicedCopy = moviesCopy.filter((_, i) => i !== index);
-  //   const strigifyCopy = JSON.stringify(splicedCopy);
-  //   setMovies(splicedCopy);
-  //   localStorage.setItem("toWatch", [strigifyCopy]);
-  // };
   const { handleMouseOut, handleMouseOver, isHovering } = useHover();
 
-  console.log(isHovering);
   return (
     <div className="movies-to-watch-wrapper">
       <div className="movies-to-watch-container" ref={containerRef}>
@@ -43,36 +35,28 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
           style={{ left: containerShift }}
           ref={contentRef}
         >
-          {movies.map((movie, index) => {
-            return (
-              <div
-                className="movie"
-                key={index}
-                onMouseOver={() => handleMouseOver(index)}
-                onMouseOut={handleMouseOut}
-              >
-                {/* <div
-                  onClick={() => removeMovie(index)}
-                  className="delete-button"
-                >
-                  X
-                </div> */}
-                <img
-                  alt="x"
-                  src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
-                  className="movie-poster"
+          {movies.map((movie, index) => (
+            <div
+              className="movie"
+              key={index}
+              onMouseOver={() => handleMouseOver(index)}
+              onMouseOut={handleMouseOut}
+            >
+              <img
+                alt="movie poster"
+                src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
+                className="movie-poster"
+              />
+              {isHovering.index === index && (
+                <OnHoverIcons
+                  index={index}
+                  movies={movies}
+                  setMovies={setMovies}
                 />
-                {isHovering.index === index && (
-                  <OnHoverIcons
-                    index={index}
-                    movies={movies}
-                    setMovies={setMovies}
-                  />
-                )}
-                <span className="movie-title">{movie.title}</span>
-              </div>
-            );
-          })}
+              )}
+              <span className="movie-title">{movie.title}</span>
+            </div>
+          ))}
         </div>
         <div
           className="slider-arrow right"

@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, createContext } from "react";
 
 export const FiltersContext = createContext(null);
@@ -9,19 +8,15 @@ export const FilterContextProvider = ({ children }) => {
   const [genreIdsForUrl, setGenreIdsForUrl] = useState([]);
 
   const triggerGenre = (id) => {
-    if (genreIdsForUrl.includes(id)) {
-      const gId = genreIdsForUrl.indexOf(id);
-
-      setGenreIdsForUrl((prev) => {
+    setGenreIdsForUrl((prev) => {
+      const genreIdIndex = genreIdsForUrl.indexOf(id);
+      if (genreIdsForUrl.includes(id)) {
         let newArr = [...prev];
-        newArr.splice(gId, 1);
+        newArr.splice(genreIdIndex, 1);
         return newArr;
-      });
-    } else {
-      setGenreIdsForUrl((prev) => {
-        return [...prev, id];
-      });
-    }
+      }
+      return [...prev, id];
+    });
   };
 
   return (
@@ -29,7 +24,6 @@ export const FilterContextProvider = ({ children }) => {
       value={{
         includeAdult,
         setIncludeAdult,
-
         yearsRange,
         setYearsRange,
         genreIdsForUrl,

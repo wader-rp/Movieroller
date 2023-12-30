@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const singleShiftValue = 450;
 
@@ -37,5 +37,6 @@ export const useSlider = () => {
         break;
     }
   };
+
   return { containerRef, contentRef, containerShift, handleArrowClick };
 };

@@ -6,6 +6,12 @@ export const useAxios = (url) => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
 
+  const resetData = () => {
+    setData(undefined);
+    setError(undefined);
+    setLoading(false);
+  };
+
   const getData = () => {
     setLoading(true);
     axios
@@ -22,5 +28,5 @@ export const useAxios = (url) => {
       });
   };
 
-  return { data, getData, error, loading };
+  return { data, getData, error, loading, resetData };
 };

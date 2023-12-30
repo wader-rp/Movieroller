@@ -74,10 +74,6 @@
   color: var(--fourthColor);
 }
 
-/* .streamings {
-  flex-grow: 1.5;
-} */
-
 .movie-rating-container {
   display: flex;
   flex-direction: row;

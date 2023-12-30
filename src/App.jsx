@@ -1,12 +1,9 @@
-import React from "react";
 import { AppContent } from "./AppContent";
 
 import { FilterContextProvider } from "./Contexts/FilterContext";
 
-export const App = () => {
-  return (
-    <FilterContextProvider>
-      <AppContent />
-    </FilterContextProvider>
-  );
-};
+export const App = () => (
+  <FilterContextProvider>
+    <AppContent />
+  </FilterContextProvider>
+);

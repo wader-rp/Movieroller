@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./movieResultStyles.css";
 import { genres } from "../../data/MovieGenres";
 import { RatingDisplay } from "./components/RatingDisplay";
@@ -20,6 +20,7 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
 
   const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
   const { data: crewAndCast, getData: getCrewAndCast } = useAxios(url);
+  //TODO: add loader and error components
 
   useEffect(() => {
     getCrewAndCast();

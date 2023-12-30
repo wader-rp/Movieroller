@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { GenresWithFilter } from "../GenresWithFilter";
 import { Slider } from "antd";
 import { IncludeAdult } from "../IncludeAdult";
@@ -32,7 +32,7 @@ const FilterScreen = () => {
             trackStyle={{ backgroundColor: "#685454" }}
             handleStyle={{ borderColor: "#685454" }}
             value={[yearsRange[0], yearsRange[1]]}
-            onChange={(dates) => setYearsRange(dates)}
+            onChange={setYearsRange}
           />
         </div>
       </div>
