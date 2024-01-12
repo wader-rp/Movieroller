@@ -16,12 +16,12 @@ const FilterScreen = () => {
         you. Just set the filters (or just let fate decide) and enjoy the random
         choice.
       </div>
-      <h1>Select movie categories</h1>
+      <h4>Select movie categories</h4>
 
       <GenresWithFilter />
       <IncludeAdult />
 
-      <h1>Select a range of years</h1>
+      <h4>Select a range of years</h4>
       <div className="slider">
         <div className="slider-container">
           <Slider

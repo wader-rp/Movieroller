@@ -1,39 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
 
-h1 {
+h4 {
   color: var(--firstColor);
   margin: 1rem 0;
   font-family: "Orbitron", sans-serif;
   letter-spacing: 2px;
-  font-size: 1.25rem;
-}
-
-.navbar {
-  width: 100%;
-  height: 55px;
-  background-color: var(--firstColor);
-  background-image: linear-gradient(
-    180deg,
-    var(--firstColor) 92%,
-    var(--secondColor) 99%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 40px 10px #ebd5d5;
-  border-bottom: none;
-}
-
-.navbar-title {
-  color: var(--thirdColor);
-  margin: 0 0 5px 0;
-  font-size: 30px;
-  letter-spacing: 20px;
-  font-weight: Bolder;
-  text-shadow: 0 0 5px hsl(0, 100%, 50%);
-  font-family: "Orbitron", sans-serif;
-  cursor: pointer;
 }
 
 .roll-button {
@@ -54,11 +26,4 @@ h1 {
 .roll-button:hover {
   transform: scale(1.1);
   cursor: pointer;
-}
-
-.result-content {
-  margin-top: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }

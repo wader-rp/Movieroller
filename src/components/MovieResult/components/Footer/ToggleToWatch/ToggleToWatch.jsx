@@ -1,8 +1,8 @@
 import { UpArrowStyled } from "./Arrow/UpArrowStyled";
 
-import "./ToWatchAndStreamings.css";
+import "./ToggleToWatch.css";
 
-export const ToWatchAndStreamings = ({ toggleToWatch }) => (
+export const ToggleToWatch = ({ toggleToWatch }) => (
   <div className="footer-content">
     <div className="options" onClick={() => toggleToWatch((prev) => !prev)}>
       <UpArrowStyled />

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./moviesToWatch.css";
-import "../../movieResultStyles.css";
-import { useSlider } from "../../../../helpers/useSlider";
-import { useHover } from "../../../../helpers/useHover";
+
+import { useSlider } from "../../../../../helpers/useSlider";
+import { useHover } from "../../../../../helpers/useHover";
 import { OnHoverIcons } from "./OnHoverIcons";
 
 const getToWatchFromStorage = () =>
@@ -43,9 +43,9 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
               onMouseOut={handleMouseOut}
             >
               <img
-                alt="movie poster"
+                alt="movie-poster"
                 src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
-                className="movie-poster"
+                className="movie-to-watch-poster"
               />
               {isHovering.index === index && (
                 <OnHoverIcons

@@ -1,5 +1,5 @@
 import "./toWatch.css";
-import { MoviesToWatch } from "../MoviesToWatch";
+import { MoviesToWatch } from "./MoviesToWatch";
 
 export const ToWatchDisplay = ({ expanded, triggerExpand }) => (
   <div className={expanded ? "grey-bg" : "hidden"}>

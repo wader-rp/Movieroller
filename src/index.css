@@ -14,11 +14,11 @@ code {
 .app {
   min-height: 100vh;
   max-width: 100%;
-  background-color: var(--thirdColor);
+
   background-image: linear-gradient(
     0deg,
     var(--secondColor) 0%,
-    var(--fourthColor) 13%
+    var(--fourthColor) 15%
   );
 
   position: relative;
@@ -34,4 +34,5 @@ code {
   --thirdColor: rgb(252, 60, 60);
   --fourthColor: rgb(246, 246, 246);
   --footerHeight: 110px;
+  --border-radius: 4px;
 }

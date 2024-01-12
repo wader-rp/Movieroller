@@ -11,16 +11,18 @@ export const GenresWithFilter = () => {
   return (
     <div className="genres-position">
       <div className="genres-bar">
-        {genres.map((genre) => (
-          <GenreButton
-            key={genre.name}
-            name={genre.name}
-            onClick={() => triggerGenre(genre.id)}
-            isChecked={genreIdsForUrl.includes(genre.id)}
-          />
-        ))}
+        <div className="genres-buttons">
+          {genres.map((genre) => (
+            <GenreButton
+              key={genre.name}
+              name={genre.name}
+              onClick={() => triggerGenre(genre.id)}
+              isChecked={genreIdsForUrl.includes(genre.id)}
+            />
+          ))}
+        </div>
         <button
-          className="genre-btn clear-button"
+          className="genre-button clear-button"
           onClick={() => setGenreIdsForUrl([])}
         >
           Clear All
@@ -33,8 +35,8 @@ export const GenresWithFilter = () => {
 const GenreButton = ({ name, onClick, isChecked }) => (
   <button
     onClick={onClick}
-    className={classNames("genre-btn", {
-      "genre-btn-checked": isChecked,
+    className={classNames("genre-button", {
+      "genre-button-checked": isChecked,
     })}
   >
     {name}

@@ -1,0 +1,46 @@
+.actors-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 17rem;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  background-color: var(--secondColor);
+  overflow: hidden;
+  transition: ease-out 0.4s;
+  margin: auto;
+}
+
+.actors-slider {
+  position: absolute;
+  display: flex;
+
+  padding: 0.5rem 2rem;
+  transition: ease-out 0.4s;
+  gap: 0 1rem;
+}
+
+.slider-arrow {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  width: 25px;
+  height: 100%;
+  background-color: rgba(8, 116, 211, 0.841);
+  box-shadow: 0 0 7px var(--firstColor) inset;
+  color: var(--fourthColor);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+.slider-arrow:hover {
+  background-color: rgb(8, 51, 88, 1);
+}
+.slider-arrow.left {
+  left: 0;
+}
+.slider-arrow.right {
+  right: 0;
+}
