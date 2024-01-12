@@ -1,13 +1,10 @@
-import { useState } from "react";
 import Header from "./components/Header/Header";
 import { MovieResult } from "./components/MovieResult/MovieResult";
 import { useContext } from "react";
 import { randomNumber } from "./helpers/randomPageGenerator";
-import FilterScreen from "./components/FilterScreen/FilterScreen";
+import { FilterScreen } from "./components/FilterScreen/FilterScreen";
 import { FiltersContext } from "./Contexts/FilterContext";
 import { useAxios } from "./helpers/useAxios";
-import { ToWatchDisplay } from "./components/MovieResult/components/ToWatch/MoviesToWatch/ToWatchDisplay";
-import { ToggleToWatch } from "./components/MovieResult/components/Footer/ToggleToWatch/ToggleToWatch";
 
 import "./index.css";
 
@@ -27,7 +24,7 @@ export const AppContent = () => {
 
   const randomMovie = movieData && movieData.results[randomNumber(20)];
   const movieId = randomMovie && randomMovie.id;
-  const [displayToWatchList, setDisplayToWatchList] = useState(false);
+
   return (
     <div className="app">
       <Header resetData={resetData} />
@@ -43,18 +40,11 @@ export const AppContent = () => {
       ) : (
         <div className="result-content">
           {randomMovie ? (
-            <>
-              <MovieResult
-                randomMovie={randomMovie}
-                movieId={movieId}
-                apiKey={API_KEY}
-              />{" "}
-              <ToWatchDisplay
-                expanded={displayToWatchList}
-                triggerExpand={() => setDisplayToWatchList((prev) => !prev)}
-              />
-              <ToggleToWatch toggleToWatch={setDisplayToWatchList} />
-            </>
+            <MovieResult
+              randomMovie={randomMovie}
+              movieId={movieId}
+              apiKey={API_KEY}
+            />
           ) : (
             <span>Something went wrong, please try again!</span>
           )}

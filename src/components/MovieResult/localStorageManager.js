@@ -7,6 +7,5 @@ export const addMovieToToWatchList = (randomMovie, crewAndCast) => {
       "toWatch",
       JSON.stringify([...currentStorage, movieData])
     );
-    console.log("tak");
   }
 };

@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import "./moviesToWatch.css";
-
-import { useSlider } from "../../../../../helpers/useSlider";
-import { useHover } from "../../../../../helpers/useHover";
+import { useSlider } from "../../../../helpers/useSlider";
+import { useHover } from "../../../../helpers/useHover";
 import { OnHoverIcons } from "./OnHoverIcons";
+
+import "./moviesToWatch.css";
 
 const getToWatchFromStorage = () =>
   JSON.parse(localStorage.getItem("toWatch") ?? "[]");
+
+const handleClearAllMoviesFromStorage = (setMovies) => {
+  localStorage.removeItem("toWatch");
+  setMovies([]);
+};
 
 export const MoviesToWatch = ({ triggerExpand, expanded }) => {
   const [movies, setMovies] = useState(getToWatchFromStorage());
@@ -67,7 +72,7 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
       </div>
       <div className="buttons-wrapper">
         <button
-          onClick={() => setMovies(getToWatchFromStorage())}
+          onClick={() => handleClearAllMoviesFromStorage(setMovies)}
           className="button-to-watch clear-all"
         >
           Clear All

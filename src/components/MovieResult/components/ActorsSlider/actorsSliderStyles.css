@@ -9,7 +9,6 @@
   background-color: var(--secondColor);
   overflow: hidden;
   transition: ease-out 0.4s;
-  margin: auto;
 }
 
 .actors-slider {

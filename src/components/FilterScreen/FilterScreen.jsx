@@ -6,7 +6,7 @@ import { getMarks } from "./helpers";
 import "./filterScreenStyles.css";
 import { FiltersContext } from "../../Contexts/FilterContext";
 
-const FilterScreen = () => {
+export const FilterScreen = () => {
   const { setYearsRange, yearsRange } = useContext(FiltersContext);
 
   return (
@@ -39,5 +39,3 @@ const FilterScreen = () => {
     </div>
   );
 };
-
-export default FilterScreen;
