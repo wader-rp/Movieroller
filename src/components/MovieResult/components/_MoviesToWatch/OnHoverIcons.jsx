@@ -6,10 +6,13 @@ export const OnHoverIcons = ({ index, movies, setMovies }) => {
     const moviesCopy = [...movies];
     const splicedCopy = moviesCopy.filter((_, i) => i !== index);
     const strigifyCopy = JSON.stringify(splicedCopy);
-    setMovies(splicedCopy);
+    setMovies(JSON.stringify(moviesCopy.filter((_, i) => i !== index)));
     localStorage.setItem("toWatch", [strigifyCopy]);
   };
-
+  const handleMovieInfoDisplay = (index) => {
+    const currentStorage = JSON.parse(localStorage.getItem("toWatch"));
+    console.log(currentStorage);
+  };
   //TODO: add info functionality
 
   return (
@@ -22,7 +25,10 @@ export const OnHoverIcons = ({ index, movies, setMovies }) => {
         <p className="movie-icon-text">Delete</p>
       </div>
       <div className="movie-icon-wrapper">
-        <InfoCircleOutlined className="movie-icon" />
+        <InfoCircleOutlined
+          className="movie-icon"
+          onClick={() => handleMovieInfoDisplay(index)}
+        />
         <p className="movie-icon-text">Info</p>
       </div>
     </div>

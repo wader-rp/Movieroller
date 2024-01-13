@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 
 import { genres } from "../../data/MovieGenres";
 import { MoviePoster } from "./components/_MoviePoster/MoviePoster";
-import { ActorsSlider } from "./components/ActorsSlider/ActorsSlider";
+import { ActorsSlider } from "./components/_ActorsSlider/ActorsSlider";
 import { RatingDisplay } from "./components/RatingDisplay";
 import { MovieTitle } from "./components/Title";
 import { CastDisplay } from "./components/_CastDisplay/CastDisplay";
 import { useAxios } from "../../helpers/useAxios";
-import { ToggleToWatch } from "./components/ToggleToWatch/ToggleToWatch";
+import { ToggleToWatch } from "./components/_ToggleToWatch/ToggleToWatch";
 import "./movieResultStyles.css";
 import { ToWatchDisplay } from "./components/_MoviesToWatch/ToWatchDisplay";
 
 export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   const [displayToWatchList, setDisplayToWatchList] = useState(false);
-
+  const [activeData, setActiveData] = useState([]);
   const randomMovieGenres = randomMovie && randomMovie.genre_ids;
   const genresNames = randomMovieGenres
     .map((id) => genres.find((genre) => genre.id === id).name)
@@ -22,7 +22,7 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
   const { data: crewAndCast, getData: getCrewAndCast } = useAxios(url);
   //TODO: add loader and error components
-
+  console.log(randomMovie);
   useEffect(() => {
     getCrewAndCast();
   }, []);
