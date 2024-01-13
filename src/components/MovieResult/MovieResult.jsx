@@ -13,20 +13,24 @@ import { ToWatchDisplay } from "./components/_MoviesToWatch/ToWatchDisplay";
 
 export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
   const [displayToWatchList, setDisplayToWatchList] = useState(false);
-  const [activeData, setActiveData] = useState([]);
+  const [activeData, setActiveData] = useState(randomMovie);
   const randomMovieGenres = randomMovie && randomMovie.genre_ids;
   const genresNames = randomMovieGenres
     .map((id) => genres.find((genre) => genre.id === id).name)
     .join(" / ");
 
   const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
-  const { data: crewAndCast, getData: getCrewAndCast } = useAxios(url);
+  const {
+    data: crewAndCast,
+    getData: getCrewAndCast,
+    setData: updateCrewAndCast,
+  } = useAxios(url);
   //TODO: add loader and error components
-  console.log(randomMovie);
+
   useEffect(() => {
     getCrewAndCast();
   }, []);
-
+  console.log(crewAndCast);
   return (
     <div className="movie-results-container-wrapper">
       <div
@@ -39,15 +43,15 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
       >
         <div className="movie-results-container">
           <div className="movie-poster-wrapper">
-            <MoviePoster randomMovie={randomMovie} />
+            <MoviePoster activeData={activeData} />
           </div>
           <div className="movie-info">
-            <MovieTitle randomMovie={randomMovie} crewAndCast={crewAndCast} />
+            <MovieTitle activeData={activeData} crewAndCast={crewAndCast} />
             <span className="genres">{genresNames}</span>
-            <RatingDisplay randomMovie={randomMovie} />
+            <RatingDisplay activeData={activeData} />
             {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
             <div className="overview">
-              <span className="overview-text">{randomMovie.overview}</span>
+              <span className="overview-text">{activeData.overview}</span>
             </div>
             {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
           </div>
@@ -56,6 +60,8 @@ export const MovieResult = ({ randomMovie, movieId, apiKey }) => {
       <ToWatchDisplay
         expanded={displayToWatchList}
         triggerExpand={() => setDisplayToWatchList((prev) => !prev)}
+        setActiveData={setActiveData}
+        updateCrewAndCast={updateCrewAndCast}
       />
       <ToggleToWatch toggleToWatch={setDisplayToWatchList} />
     </div>

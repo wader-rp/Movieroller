@@ -13,7 +13,12 @@ const handleClearAllMoviesFromStorage = (setMovies) => {
   setMovies([]);
 };
 
-export const MoviesToWatch = ({ triggerExpand, expanded }) => {
+export const MoviesToWatch = ({
+  triggerExpand,
+  expanded,
+  setActiveData,
+  updateCrewAndCast,
+}) => {
   const [movies, setMovies] = useState(getToWatchFromStorage());
   const { containerRef, contentRef, containerShift, handleArrowClick } =
     useSlider();
@@ -57,6 +62,9 @@ export const MoviesToWatch = ({ triggerExpand, expanded }) => {
                   index={index}
                   movies={movies}
                   setMovies={setMovies}
+                  setActiveData={setActiveData}
+                  updateCrewAndCast={updateCrewAndCast}
+                  triggerExpand={triggerExpand}
                 />
               )}
               <span className="movie-title">{movie.title}</span>

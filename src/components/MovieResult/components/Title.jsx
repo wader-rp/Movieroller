@@ -1,17 +1,14 @@
 import { PlusSquareOutlined } from "@ant-design/icons";
 import { addMovieToToWatchList } from "../localStorageManager";
 
-export const MovieTitle = ({ randomMovie, crewAndCast }) => (
+export const MovieTitle = ({ activeData, crewAndCast }) => (
   <div className="title-and-add">
     <div className="title-year-text">
-      {`${randomMovie.title}\u00A0(${randomMovie.release_date.substring(
-        0,
-        4,
-      )})`}
+      {`${activeData.title}\u00A0(${activeData.release_date.substring(0, 4)})`}
     </div>
     <div
       className="add-icon"
-      onClick={() => addMovieToToWatchList(randomMovie, crewAndCast)}
+      onClick={() => addMovieToToWatchList(activeData, crewAndCast)}
     >
       <PlusSquareOutlined className="add-to-watch" />
       <h5>Add to watch list</h5>

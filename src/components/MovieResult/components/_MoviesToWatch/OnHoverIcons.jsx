@@ -1,19 +1,30 @@
 import "./moviesToWatch.css";
 import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
 
-export const OnHoverIcons = ({ index, movies, setMovies }) => {
+export const OnHoverIcons = ({
+  index,
+  movies,
+  setMovies,
+  setActiveData,
+  updateCrewAndCast,
+  triggerExpand,
+}) => {
   const removeMovie = (index) => {
     const moviesCopy = [...movies];
     const splicedCopy = moviesCopy.filter((_, i) => i !== index);
     const strigifyCopy = JSON.stringify(splicedCopy);
     setMovies(JSON.stringify(moviesCopy.filter((_, i) => i !== index)));
-    localStorage.setItem("toWatch", [strigifyCopy]);
   };
+
   const handleMovieInfoDisplay = (index) => {
     const currentStorage = JSON.parse(localStorage.getItem("toWatch"));
-    console.log(currentStorage);
+    setActiveData(currentStorage[index]);
+    updateCrewAndCast({
+      cast: currentStorage[index].cast,
+      crew: currentStorage[index].crew,
+    });
   };
-  //TODO: add info functionality
+  //TODO: add info functionality , close after update.
 
   return (
     <div className="movie-icons">
