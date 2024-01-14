@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 
 import { genres } from "../../data/MovieGenres";
-import { MoviePoster } from "./components/_MoviePoster/MoviePoster";
-import { ActorsSlider } from "./components/_ActorsSlider/ActorsSlider";
+import { MoviePoster } from "./components/MoviePoster/MoviePoster";
+import { ActorsSlider } from "./components/ActorsSlider/ActorsSlider";
 import { RatingDisplay } from "./components/RatingDisplay";
 import { MovieTitle } from "./components/Title";
-import { CastDisplay } from "./components/_CastDisplay/CastDisplay";
+import { CastDisplay } from "./components/CastDisplay/CastDisplay";
 import { useAxios } from "../../helpers/useAxios";
-import { ToggleToWatch } from "./components/_ToggleToWatch/ToggleToWatch";
-import { ToWatchDisplay } from "./components/_MoviesToWatch/ToWatchDisplay";
+import { ToggleToWatch } from "./components/ToggleToWatch/ToggleToWatch";
+import { ToWatchDisplay } from "./components/MoviesToWatch/ToWatchDisplay";
 import { useMovieResultContext } from "../../Contexts/ToWatchDisplayContext";
 
 import "./MovieResultStyles.css";

@@ -6,8 +6,14 @@ import { SliderArrow } from "../SliderArrow/SliderArrow";
 
 import "./MoviesToWatch.css";
 
-const getToWatchFromStorage = () =>
-  JSON.parse(localStorage.getItem("toWatch") ?? "[]");
+const getToWatchFromStorage = () => {
+  try {
+    return JSON.parse(localStorage.getItem("toWatch"));
+  } catch {
+    new Error("Could not parse localStorage value");
+    return [];
+  }
+};
 
 const handleClearAllMoviesFromStorage = (setMovies) => {
   localStorage.removeItem("toWatch");
@@ -25,7 +31,7 @@ export const MoviesToWatch = () => {
 
   useEffect(() => {
     if (expandedToWatchList) {
-      setMovies(getToWatchFromStorage());
+      setMovies(getToWatchFromStorage);
     }
   }, [expandedToWatchList]);
 
