@@ -1,20 +1,16 @@
-import "./toWatch.css";
 import { MoviesToWatch } from "./MoviesToWatch";
+import { useMovieResultContext } from "../../../../Contexts/ToWatchDisplayContext";
 
-export const ToWatchDisplay = ({
-  expanded,
-  triggerExpand,
-  setActiveData,
-  updateCrewAndCast,
-}) => (
-  <div className={expanded ? "grey-bg" : "hidden"}>
-    <div className={expanded ? "to-watch" : "to-watch-hidden"}>
-      <MoviesToWatch
-        expanded={expanded}
-        triggerExpand={triggerExpand}
-        setActiveData={setActiveData}
-        updateCrewAndCast={updateCrewAndCast}
-      />
+import "./ToWatch.css";
+
+export const ToWatchDisplay = () => {
+  const { expandedToWatchList } = useMovieResultContext();
+
+  return (
+    <div className={expandedToWatchList ? "grey-bg" : "hidden"}>
+      <div className={expandedToWatchList ? "to-watch" : "to-watch-hidden"}>
+        <MoviesToWatch />
+      </div>
     </div>
-  </div>
-);
+  );
+};

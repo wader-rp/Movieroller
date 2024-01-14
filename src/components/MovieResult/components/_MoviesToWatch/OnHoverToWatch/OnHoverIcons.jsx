@@ -1,30 +1,34 @@
-import "./moviesToWatch.css";
+import { useMovieResultContext } from "../../../../../Contexts/ToWatchDisplayContext";
 import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
+
+import "./OnHoverIcons.css";
 
 export const OnHoverIcons = ({
   index,
   movies,
   setMovies,
-  setActiveData,
-  updateCrewAndCast,
-  triggerExpand,
+  handleArrowClick,
 }) => {
+  const { setActiveData, setExpandedToWatchList, setCrewAndCast } =
+    useMovieResultContext();
+
   const removeMovie = (index) => {
     const moviesCopy = [...movies];
-    const splicedCopy = moviesCopy.filter((_, i) => i !== index);
-    const strigifyCopy = JSON.stringify(splicedCopy);
-    setMovies(JSON.stringify(moviesCopy.filter((_, i) => i !== index)));
+    const moviesWithRemovedIndex = moviesCopy.filter((_, i) => i !== index);
+    setMovies(moviesWithRemovedIndex);
+    localStorage.setItem("toWatch", JSON.stringify(moviesWithRemovedIndex));
+    handleArrowClick("left");
   };
 
   const handleMovieInfoDisplay = (index) => {
     const currentStorage = JSON.parse(localStorage.getItem("toWatch"));
     setActiveData(currentStorage[index]);
-    updateCrewAndCast({
+    setCrewAndCast({
       cast: currentStorage[index].cast,
       crew: currentStorage[index].crew,
     });
+    setExpandedToWatchList((prev) => !prev);
   };
-  //TODO: add info functionality , close after update.
 
   return (
     <div className="movie-icons">

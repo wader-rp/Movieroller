@@ -1,4 +1,4 @@
-import "./moviePosterStyled.css";
+import "./MoviePosterStyled.css";
 
 export const MoviePoster = ({ activeData }) => (
   <img

@@ -1,5 +1,6 @@
 .movie-results-container-wrapper {
   max-height: 50rem;
+  width: 100%;
 }
 
 .movie-results-container {
@@ -91,14 +92,13 @@
   justify-content: center;
   height: min-content;
   background: rgb(15, 68, 113, 0.7);
-  gap: 0.5em;
-  border-radius: 5px;
+  gap: 0.2em;
 
+  border-radius: var(--border-radius);
   color: white;
   font-family: "Orbitron", sans-serif;
   letter-spacing: 5px;
-  box-shadow: 0 0 20px var(--firstColor);
-  padding: 5px 5px;
+  padding: 7px 10px;
   font-size: 2rem;
 }
 .add-icon:hover {

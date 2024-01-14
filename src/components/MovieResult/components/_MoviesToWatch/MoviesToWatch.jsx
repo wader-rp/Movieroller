@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSlider } from "../../../../helpers/useSlider";
-import { useHover } from "../../../../helpers/useHover";
-import { OnHoverIcons } from "./OnHoverIcons";
+import { useMovieResultContext } from "../../../../Contexts/ToWatchDisplayContext";
+import { SingleMovieCard } from "./SingleMovieCard/SingleMovieCard";
+import { SliderArrow } from "../SliderArrow/SliderArrow";
 
-import "./moviesToWatch.css";
+import "./MoviesToWatch.css";
 
 const getToWatchFromStorage = () =>
   JSON.parse(localStorage.getItem("toWatch") ?? "[]");
@@ -13,79 +14,54 @@ const handleClearAllMoviesFromStorage = (setMovies) => {
   setMovies([]);
 };
 
-export const MoviesToWatch = ({
-  triggerExpand,
-  expanded,
-  setActiveData,
-  updateCrewAndCast,
-}) => {
-  const [movies, setMovies] = useState(getToWatchFromStorage());
+export const MoviesToWatch = () => {
+  const [movies, setMovies] = useState(getToWatchFromStorage);
+
   const { containerRef, contentRef, containerShift, handleArrowClick } =
     useSlider();
 
+  const { expandedToWatchList, setExpandedToWatchList } =
+    useMovieResultContext();
+
   useEffect(() => {
-    if (expanded) {
+    if (expandedToWatchList) {
       setMovies(getToWatchFromStorage());
     }
-  }, [expanded]);
-
-  const { handleMouseOut, handleMouseOver, isHovering } = useHover();
+  }, [expandedToWatchList]);
 
   return (
     <div className="movies-to-watch-wrapper">
       <div className="movies-to-watch-container" ref={containerRef}>
-        <div
-          className="slider-arrow left"
-          onClick={() => handleArrowClick("left")}
-        >
-          {"<"}
-        </div>
+        <SliderArrow direction={"left"} handleArrowClick={handleArrowClick} />
         <div
           className="to-watch-slider"
           style={{ left: containerShift }}
           ref={contentRef}
         >
           {movies.map((movie, index) => (
-            <div
-              className="movie"
-              key={index}
-              onMouseOver={() => handleMouseOver(index)}
-              onMouseOut={handleMouseOut}
-            >
-              <img
-                alt="movie-poster"
-                src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
-                className="movie-to-watch-poster"
-              />
-              {isHovering.index === index && (
-                <OnHoverIcons
-                  index={index}
-                  movies={movies}
-                  setMovies={setMovies}
-                  setActiveData={setActiveData}
-                  updateCrewAndCast={updateCrewAndCast}
-                  triggerExpand={triggerExpand}
-                />
-              )}
-              <span className="movie-title">{movie.title}</span>
-            </div>
+            <SingleMovieCard
+              key={movie.id}
+              movies={movies}
+              movie={movie}
+              index={index}
+              setMovies={setMovies}
+              handleArrowClick={handleArrowClick}
+            />
           ))}
         </div>
-        <div
-          className="slider-arrow right"
-          onClick={() => handleArrowClick("right")}
-        >
-          {">"}
-        </div>
+        <SliderArrow direction={"right"} handleArrowClick={handleArrowClick} />
       </div>
       <div className="buttons-wrapper">
         <button
           onClick={() => handleClearAllMoviesFromStorage(setMovies)}
-          className="button-to-watch clear-all"
+          className="button-to-watch "
         >
           Clear All
         </button>
-        <button onClick={triggerExpand} className="button-to-watch exit">
+        <button
+          onClick={() => setExpandedToWatchList((prev) => !prev)}
+          className="button-to-watch "
+        >
           Exit
         </button>
       </div>

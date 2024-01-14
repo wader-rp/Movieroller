@@ -1,7 +1,8 @@
-import "./actorsSliderStyles.css";
-
 import { useSlider } from "../../../../helpers/useSlider";
 import { ActorDisplayBox } from "../ActorDisplay/ActorDisplayBox";
+import { SliderArrow } from "../SliderArrow/SliderArrow";
+
+import "./ActorsSliderStyles.css";
 
 export const ActorsSlider = ({ crewAndCast }) => {
   const cast = crewAndCast.cast;
@@ -10,12 +11,7 @@ export const ActorsSlider = ({ crewAndCast }) => {
 
   return (
     <div className="actors-slider-container" ref={containerRef}>
-      <div
-        className="slider-arrow left"
-        onClick={() => handleArrowClick("left")}
-      >
-        {"<"}
-      </div>
+      <SliderArrow direction={"left"} handleArrowClick={handleArrowClick} />
       <div
         className="actors-slider"
         style={{ left: containerShift }}
@@ -25,12 +21,7 @@ export const ActorsSlider = ({ crewAndCast }) => {
           <ActorDisplayBox key={actor.name} actor={actor} />
         ))}
       </div>
-      <div
-        className="slider-arrow right"
-        onClick={() => handleArrowClick("right")}
-      >
-        {">"}
-      </div>
+      <SliderArrow direction={"right"} handleArrowClick={handleArrowClick} />
     </div>
   );
 };

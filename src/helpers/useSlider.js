@@ -38,5 +38,10 @@ export const useSlider = () => {
     }
   };
 
-  return { containerRef, contentRef, containerShift, handleArrowClick };
+  return {
+    containerRef,
+    contentRef,
+    containerShift,
+    handleArrowClick,
+  };
 };

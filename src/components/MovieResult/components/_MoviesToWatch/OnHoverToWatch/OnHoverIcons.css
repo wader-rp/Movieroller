@@ -1,0 +1,31 @@
+.movie-icons {
+  display: flex;
+  gap: 2em;
+  position: absolute;
+  z-index: 20;
+}
+
+.movie-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.movie-icon {
+  position: relative;
+  cursor: pointer;
+  color: var(--fourthColor);
+  font-size: 3em;
+}
+
+.movie-icon:hover {
+  transform: scale(1.1);
+}
+
+.movie-icon-text {
+  color: var(--fourthColor);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1em;
+  letter-spacing: 3px;
+}

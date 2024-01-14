@@ -1,0 +1,23 @@
+.slider-arrow {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  width: 25px;
+  height: 100%;
+  background-color: rgba(8, 116, 211, 0.841);
+  box-shadow: 0 0 7px var(--firstColor) inset;
+  color: var(--fourthColor);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+.slider-arrow:hover {
+  background-color: rgb(8, 51, 88, 1);
+}
+.slider-arrow.left {
+  left: 0;
+}
+.slider-arrow.right {
+  right: 0;
+}

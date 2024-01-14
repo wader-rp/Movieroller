@@ -1,4 +1,4 @@
-import "./actorDisplayBoxStyles.css";
+import "./ActorDisplayBoxStyles.css";
 
 export const ActorDisplayBox = ({ actor }) => {
   return (

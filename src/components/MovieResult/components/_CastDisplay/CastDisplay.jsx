@@ -1,4 +1,4 @@
-import "./castDisplay.css";
+import "./CastDisplay.css";
 
 export const CastDisplay = ({ crewAndCast }) => {
   const crew = crewAndCast.crew;

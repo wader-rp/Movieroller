@@ -3,7 +3,7 @@ import { GenresWithFilter } from "../GenresWithFilter";
 import { Slider } from "antd";
 import { IncludeAdult } from "../IncludeAdult";
 import { getMarks } from "./helpers";
-import "./filterScreenStyles.css";
+import "./FilterScreenStyles.css";
 import { FiltersContext } from "../../Contexts/FilterContext";
 
 export const FilterScreen = () => {

@@ -1,12 +1,13 @@
 import Header from "./components/Header/Header";
 import { MovieResult } from "./components/MovieResult/MovieResult";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { randomNumber } from "./helpers/randomPageGenerator";
 import { FilterScreen } from "./components/FilterScreen/FilterScreen";
 import { FiltersContext } from "./Contexts/FilterContext";
 import { useAxios } from "./helpers/useAxios";
 
 import "./index.css";
+import { useMovieResultContext } from "./Contexts/ToWatchDisplayContext";
 
 export const AppContent = () => {
   const {
@@ -15,6 +16,8 @@ export const AppContent = () => {
     includeAdult,
   } = useContext(FiltersContext);
 
+  const { setActiveData, activeData } = useMovieResultContext();
+
   const API_KEY = process.env.REACT_APP_API_KEY;
   const randomPage = randomNumber(30);
   const genreIdsJoined = genreIdsForUrl.join("|");
@@ -22,8 +25,11 @@ export const AppContent = () => {
 
   const { data: movieData, getData, resetData } = useAxios(url);
 
-  const randomMovie = movieData && movieData.results[randomNumber(20)];
-  const movieId = randomMovie && randomMovie.id;
+  useEffect(() => {
+    setActiveData(movieData && movieData.results[randomNumber(20)]);
+  }, [movieData, setActiveData]);
+
+  const movieId = activeData && activeData.id;
 
   return (
     <div className="app">
@@ -38,17 +44,13 @@ export const AppContent = () => {
           </button>
         </>
       ) : (
-        <div className="result-content">
-          {randomMovie ? (
-            <MovieResult
-              randomMovie={randomMovie}
-              movieId={movieId}
-              apiKey={API_KEY}
-            />
+        <>
+          {activeData ? (
+            <MovieResult apiKey={API_KEY} movieId={movieId} />
           ) : (
             <span>Something went wrong, please try again!</span>
           )}
-        </div>
+        </>
       )}
     </div>
   );
