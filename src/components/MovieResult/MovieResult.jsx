@@ -10,11 +10,13 @@ import { useAxios } from "../../helpers/useAxios";
 import { ToggleToWatch } from "./components/ToggleToWatch/ToggleToWatch";
 import { ToWatchDisplay } from "./components/MoviesToWatch/ToWatchDisplay";
 import { useMovieResultContext } from "../../Contexts/ToWatchDisplayContext";
+import { useWindowResize } from "helpers/useWindowResize";
 
 import "./MovieResultStyles.css";
 
 export const MovieResult = ({ apiKey, movieId, resetData }) => {
   const { activeData, crewAndCast, setCrewAndCast } = useMovieResultContext();
+  const { screenWidth } = useWindowResize();
 
   const randomMovieGenres = activeData && activeData.genre_ids;
   const genresNames = randomMovieGenres
@@ -32,7 +34,7 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
   useEffect(() => {
     setCrewAndCast(fetchedCrewAndCast);
   }, [fetchedCrewAndCast]);
-
+  console.log(screenWidth);
   return (
     <>
       <Header resetData={resetData} />

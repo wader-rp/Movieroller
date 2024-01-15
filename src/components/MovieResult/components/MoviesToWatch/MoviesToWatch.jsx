@@ -34,6 +34,12 @@ export const MoviesToWatch = () => {
       setMovies(getToWatchFromStorage);
     }
   }, [expandedToWatchList]);
+  console.log(
+    containerRef.current?.offsetWidth,
+    contentRef.current?.offsetWidth
+  );
+  const rightArrowDisabled =
+    containerRef.current?.offsetWidth > contentRef.current?.offsetWidth;
 
   return (
     <div className="movies-to-watch-wrapper">
@@ -55,7 +61,11 @@ export const MoviesToWatch = () => {
             />
           ))}
         </div>
-        <SliderArrow direction={"right"} handleArrowClick={handleArrowClick} />
+        <SliderArrow
+          direction={"right"}
+          handleArrowClick={handleArrowClick}
+          disabled={rightArrowDisabled}
+        />
       </div>
       <div className="buttons-wrapper">
         <button

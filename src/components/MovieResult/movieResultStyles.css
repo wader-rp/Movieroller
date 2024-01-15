@@ -22,6 +22,7 @@
 .movie-info {
   position: relative;
   display: flex;
+  flex: 1;
   align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: column;

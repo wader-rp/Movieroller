@@ -21,3 +21,8 @@
 .slider-arrow.right {
   right: 0;
 }
+
+.disabled {
+  cursor: disabled;
+  pointer-events: none;
+}

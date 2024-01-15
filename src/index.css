@@ -1,28 +1,20 @@
-html,
-body {
-  height: 100%;
-}
-#root {
-  height: 100%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .app-wrapper {
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
-  justify-content: flex-start;
-
-  height: 100%;
   background: var(--background);
 }
 
@@ -35,7 +27,9 @@ code {
   --border-radius: 4px;
   --background: linear-gradient(
     0deg,
-    var(--secondColor) 0%,
-    var(--fourthColor) 15%
+    var(--firstColor) 0%,
+    var(--fourthColor) 15%,
+    var(--fourthColor) 85%,
+    var(--firstColor) 100%
   );
 }
