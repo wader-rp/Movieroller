@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import { Header } from "../Header/Header";
+
 import { GenresWithFilter } from "../GenresWithFilter";
 import { Slider } from "antd";
 import { IncludeAdult } from "../IncludeAdult";
@@ -6,11 +8,12 @@ import { getMarks } from "./helpers";
 import "./FilterScreenStyles.css";
 import { FiltersContext } from "../../Contexts/FilterContext";
 
-export const FilterScreen = () => {
+export const FilterScreen = ({ resetData, getData }) => {
   const { setYearsRange, yearsRange } = useContext(FiltersContext);
 
   return (
     <div className="filter-screen">
+      <Header resetData={resetData} />
       <div className="description">
         Hi! If you don't know what movie to watch today, this is the app for
         you. Just set the filters (or just let fate decide) and enjoy the random
@@ -36,6 +39,9 @@ export const FilterScreen = () => {
           />
         </div>
       </div>
+      <button className="roll-button" onClick={getData}>
+        ROLL!
+      </button>
     </div>
   );
 };

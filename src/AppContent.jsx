@@ -1,4 +1,3 @@
-import Header from "./components/Header/Header";
 import { MovieResult } from "./components/MovieResult/MovieResult";
 import { useContext, useEffect } from "react";
 import { randomNumber } from "./helpers/randomPageGenerator";
@@ -32,21 +31,17 @@ export const AppContent = () => {
   const movieId = activeData && activeData.id;
 
   return (
-    <div className="app">
-      <Header resetData={resetData} />
-
+    <div className="app-wrapper">
       {!movieData ? (
-        <>
-          <FilterScreen />
-
-          <button className="roll-button" onClick={getData}>
-            ROLL!
-          </button>
-        </>
+        <FilterScreen resetData={resetData} getData={getData} />
       ) : (
         <>
           {activeData ? (
-            <MovieResult apiKey={API_KEY} movieId={movieId} />
+            <MovieResult
+              apiKey={API_KEY}
+              movieId={movieId}
+              resetData={resetData}
+            />
           ) : (
             <span>Something went wrong, please try again!</span>
           )}

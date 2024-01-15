@@ -1,19 +1,20 @@
 import { useMovieResultContext } from "../../../../Contexts/ToWatchDisplayContext";
-import { UpArrowStyled } from "./Arrow/UpArrowStyled";
+import { DoubleRightOutlined } from "@ant-design/icons";
 
 import "./ToggleToWatch.css";
 
 export const ToggleToWatch = () => {
   const { setExpandedToWatchList } = useMovieResultContext();
   return (
-    <div className="footer-content">
-      <div
-        className="options"
-        onClick={() => setExpandedToWatchList((prev) => !prev)}
-      >
-        <UpArrowStyled />
-        <span className="options-text">TO-WATCH LIST</span>
+    <div
+      className="toggle-to-watch"
+      onClick={() => setExpandedToWatchList((prev) => !prev)}
+    >
+      <div className="arrow-wrapper">
+        <DoubleRightOutlined className="arrow" />
       </div>
+
+      <span className="text">TO-WATCH LIST</span>
     </div>
   );
 };

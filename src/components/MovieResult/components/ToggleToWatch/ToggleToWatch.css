@@ -1,25 +1,34 @@
-.footer-content {
-  display: flex;
-  padding: 2rem 10rem;
-  height: var(--footerHeight);
-  justify-content: center;
-  align-items: center;
-  font-family: "Orbitron", sans-serif;
-}
-.options {
+.toggle-to-watch {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5em;
   border-radius: 5px;
-  padding: 2px 2px;
+  padding: 1rem;
+  font-family: "Orbitron", sans-serif;
 }
-.options:hover {
+.toggle-to-watch:hover {
   cursor: pointer;
-  padding: 0 2px;
 }
 
-.options-text {
+.text {
   letter-spacing: 5px;
   color: var(--fourthColor);
   text-shadow: 0 0 10px var(--firstColor);
+}
+
+.arrow-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-right: 30px;
+}
+
+.arrow {
+  color: white;
+  rotate: -90deg;
+  transform: scaleY(3);
+  line-height: 1;
+  height: 30%;
 }

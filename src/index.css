@@ -1,5 +1,9 @@
+html,
 body {
-  margin: 0 auto;
+  height: 100%;
+}
+#root {
+  height: 100%;
 }
 
 code {
@@ -12,18 +16,14 @@ code {
   box-sizing: border-box;
 }
 
-.app {
-  background-image: linear-gradient(
-    0deg,
-    var(--secondColor) 0%,
-    var(--fourthColor) 15%
-  );
-  height: 100vh;
-  position: relative;
+.app-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  overflow-y: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 100%;
+  background: var(--background);
 }
 
 :root {
@@ -33,4 +33,9 @@ code {
   --fourthColor: rgb(246, 246, 246);
   --footerHeight: 110px;
   --border-radius: 4px;
+  --background: linear-gradient(
+    0deg,
+    var(--secondColor) 0%,
+    var(--fourthColor) 15%
+  );
 }

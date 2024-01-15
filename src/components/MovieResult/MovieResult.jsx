@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import { Header } from "../Header/Header";
 import { genres } from "../../data/MovieGenres";
 import { MoviePoster } from "./components/MoviePoster/MoviePoster";
 import { ActorsSlider } from "./components/ActorsSlider/ActorsSlider";
@@ -13,7 +13,7 @@ import { useMovieResultContext } from "../../Contexts/ToWatchDisplayContext";
 
 import "./MovieResultStyles.css";
 
-export const MovieResult = ({ apiKey, movieId }) => {
+export const MovieResult = ({ apiKey, movieId, resetData }) => {
   const { activeData, crewAndCast, setCrewAndCast } = useMovieResultContext();
 
   const randomMovieGenres = activeData && activeData.genre_ids;
@@ -34,33 +34,37 @@ export const MovieResult = ({ apiKey, movieId }) => {
   }, [fetchedCrewAndCast]);
 
   return (
-    <div className="movie-results-container-wrapper">
-      <div
-        className="movie-results-container-bg"
-        style={{
-          backgroundImage: `url(
+    <>
+      <Header resetData={resetData} />
+      <div className="movie-results-container-wrapper">
+        <div
+          className="movie-results-container-bg"
+          style={{
+            backgroundImage: `url(
           https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${activeData.poster_path}
         )`,
-        }}
-      >
-        <div className="movie-results-container">
-          <div className="movie-poster-wrapper">
+          }}
+        >
+          <div className="movie-results-container">
             <MoviePoster activeData={activeData} />
-          </div>
-          <div className="movie-info">
-            <MovieTitle activeData={activeData} crewAndCast={crewAndCast} />
-            <span className="genres">{genresNames}</span>
-            <RatingDisplay activeData={activeData} />
-            {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
-            <div className="overview">
-              <span className="overview-text">{activeData.overview}</span>
+
+            <div className="movie-info">
+              <MovieTitle activeData={activeData} crewAndCast={crewAndCast} />
+              <span className="genres">{genresNames}</span>
+              <RatingDisplay activeData={activeData} />
+              {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
+              <div className="overview">
+                <span className="overview-text">{activeData.overview}</span>
+              </div>
+              {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
             </div>
-            {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
           </div>
         </div>
+        <ToWatchDisplay />
       </div>
-      <ToWatchDisplay />
-      <ToggleToWatch />
-    </div>
+      <div className="toggle-to-watch">
+        <ToggleToWatch />
+      </div>
+    </>
   );
 };
