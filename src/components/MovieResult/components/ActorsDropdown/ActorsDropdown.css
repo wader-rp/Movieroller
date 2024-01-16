@@ -1,0 +1,7 @@
+.actors-dropdown {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--firstColor);
+  flex-wrap: wrap;
+  justify-content: center;
+}

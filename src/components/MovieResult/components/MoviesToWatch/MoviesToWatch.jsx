@@ -34,10 +34,7 @@ export const MoviesToWatch = () => {
       setMovies(getToWatchFromStorage);
     }
   }, [expandedToWatchList]);
-  console.log(
-    containerRef.current?.offsetWidth,
-    contentRef.current?.offsetWidth
-  );
+
   const rightArrowDisabled =
     containerRef.current?.offsetWidth > contentRef.current?.offsetWidth;
 

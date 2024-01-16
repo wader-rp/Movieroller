@@ -4,7 +4,7 @@ import { genres } from "../../data/MovieGenres";
 import { MoviePoster } from "./components/MoviePoster/MoviePoster";
 import { ActorsSlider } from "./components/ActorsSlider/ActorsSlider";
 import { RatingDisplay } from "./components/RatingDisplay";
-import { MovieTitle } from "./components/Title";
+import { MovieTitle } from "./components/MovieTitle/MovieTitle";
 import { CastDisplay } from "./components/CastDisplay/CastDisplay";
 import { useAxios } from "../../helpers/useAxios";
 import { ToggleToWatch } from "./components/ToggleToWatch/ToggleToWatch";
@@ -13,6 +13,8 @@ import { useMovieResultContext } from "../../Contexts/ToWatchDisplayContext";
 import { useWindowResize } from "helpers/useWindowResize";
 
 import "./MovieResultStyles.css";
+import { ActorsDropdown } from "./components/ActorsDropdown/ActorsDropdown";
+import { AddMovieToWatchListButton } from "./components/AddMovieToWatchListButton/AddMovieToWatchListButton";
 
 export const MovieResult = ({ apiKey, movieId, resetData }) => {
   const { activeData, crewAndCast, setCrewAndCast } = useMovieResultContext();
@@ -34,7 +36,14 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
   useEffect(() => {
     setCrewAndCast(fetchedCrewAndCast);
   }, [fetchedCrewAndCast]);
-  console.log(screenWidth);
+
+  const actorsDisplay =
+    crewAndCast && screenWidth > 992 ? (
+      <ActorsSlider cast={crewAndCast?.cast} display={"slider"} />
+    ) : (
+      <ActorsDropdown cast={crewAndCast?.cast} display={"dropdown"} />
+    );
+
   return (
     <>
       <Header resetData={resetData} />
@@ -51,14 +60,21 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
             <MoviePoster activeData={activeData} />
 
             <div className="movie-info">
-              <MovieTitle activeData={activeData} crewAndCast={crewAndCast} />
+              <div className="movie-title-and-add-button--wrapper">
+                <MovieTitle activeData={activeData} />
+                <AddMovieToWatchListButton
+                  activeData={activeData}
+                  crewAndCast={crewAndCast}
+                />
+              </div>
+
               <span className="genres">{genresNames}</span>
               <RatingDisplay activeData={activeData} />
               {crewAndCast && <CastDisplay crewAndCast={crewAndCast} />}
               <div className="overview">
                 <span className="overview-text">{activeData.overview}</span>
               </div>
-              {crewAndCast && <ActorsSlider crewAndCast={crewAndCast} />}
+              {crewAndCast && actorsDisplay}
             </div>
           </div>
         </div>

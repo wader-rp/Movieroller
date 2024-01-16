@@ -25,20 +25,20 @@ export const FilterScreen = ({ resetData, getData }) => {
         <IncludeAdult />
 
         <h4>Select a range of years</h4>
-        <div className="slider">
-          <div className="slider-container">
-            <Slider
-              range
-              marks={getMarks(yearsRange)}
-              min={1935}
-              max={2023}
-              trackStyle={{ backgroundColor: "#685454" }}
-              handleStyle={{ borderColor: "#685454" }}
-              value={[yearsRange[0], yearsRange[1]]}
-              onChange={setYearsRange}
-            />
-          </div>
+
+        <div className="slider-container">
+          <Slider
+            range
+            marks={getMarks(yearsRange)}
+            min={1935}
+            max={2023}
+            trackStyle={{ backgroundColor: "#685454" }}
+            handleStyle={{ borderColor: "#685454" }}
+            value={[yearsRange[0], yearsRange[1]]}
+            onChange={setYearsRange}
+          />
         </div>
+
         <button className="roll-button" onClick={getData}>
           ROLL!
         </button>

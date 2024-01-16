@@ -1,9 +1,10 @@
 import "./ActorDisplayBoxStyles.css";
+import { clsx } from "clsx";
 
-export const ActorDisplayBox = ({ actor }) => {
+export const ActorDisplayBox = ({ actor, display }) => {
   return (
     <div
-      className="actor-box"
+      className={clsx("actor-box", display)}
       key={actor.name}
       style={{
         backgroundImage: actor.profile_path
@@ -11,9 +12,25 @@ export const ActorDisplayBox = ({ actor }) => {
           : "url(https://static8.depositphotos.com/1009634/988/v/450/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg)",
       }}
     >
-      <div className="actor-name">
-        <span className="actor-name-char name">{actor.name}</span>
-        <span className="actor-name-char char">{actor.character}</span>
+      <div
+        className={clsx("actor-name-and-char-container", {
+          "actor-name-and-char-container--dropdown": display === "dropdown",
+        })}
+      >
+        <span
+          className={clsx("actor-name-char name", {
+            "dropdown-name": display === "dropdown",
+          })}
+        >
+          {actor.name}
+        </span>
+        <span
+          className={clsx("actor-name-char char", {
+            "dropdown-char": display === "dropdown",
+          })}
+        >
+          {actor.character}
+        </span>
       </div>
     </div>
   );

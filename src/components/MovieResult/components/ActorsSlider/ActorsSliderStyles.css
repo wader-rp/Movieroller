@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 17rem;
+  min-height: 40%;
   width: 100%;
   padding: 0.5rem 2rem;
   border-radius: 10px;
@@ -14,9 +14,7 @@
 .actors-slider {
   position: absolute;
   display: flex;
-
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.75rem;
   transition: ease-out 0.4s;
   gap: 0 1rem;
 }
-

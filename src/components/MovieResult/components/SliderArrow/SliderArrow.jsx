@@ -2,8 +2,6 @@ import "./SliderArrow.css";
 import { clsx } from "clsx";
 
 export const SliderArrow = ({ direction, handleArrowClick, disabled }) => {
-  console.log(disabled);
-
   return (
     <div
       className={
