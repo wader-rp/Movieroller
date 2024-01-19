@@ -1,0 +1,21 @@
+
+.movie-poster-wrapper {
+  flex: 1;
+}
+
+.movie-info {
+  position: relative;
+  display: flex;
+  flex: 2;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+.movie-title-and-add-button--wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}

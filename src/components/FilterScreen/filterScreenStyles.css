@@ -110,11 +110,7 @@
     padding: 2rem;
     box-shadow: 0px -1px 6px var(--firstColor) inset;
   }
-  .slider-container {
-    width: 20rem;
-    padding: 1rem 3.5rem;
-    box-shadow: 0px -1px 6px var(--firstColor) inset;
-  }
+
   .description {
     font-size: unset;
   }

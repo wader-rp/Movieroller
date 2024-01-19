@@ -1,4 +1,4 @@
-import { ActorDisplayBox } from "../ActorDisplay/ActorDisplayBox";
+import { ActorDisplayBox } from "../ActorDisplayBox/ActorDisplayBox";
 import "./ActorsDropdown.css";
 
 export const ActorsDropdown = ({ cast, display }) => {

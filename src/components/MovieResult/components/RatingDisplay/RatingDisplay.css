@@ -1,0 +1,25 @@
+.movie-rating-container {
+  display: flex;
+  flex-direction: row;
+  font-family: "Open Sans", sans-serif;
+  color: var(--fourthColor);
+}
+.movie-rating {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+  color: var(--thirdColor);
+}
+
+.ant-rate {
+  color: var(--thirdColor) !important;
+  font-size: 15px;
+}
+
+.ant-rate .ant-rate-star-second {
+  color: var(--fourthColor);
+}

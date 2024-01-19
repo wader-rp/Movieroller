@@ -1,6 +1,9 @@
+import { useMovieResultContext } from "Contexts/ToWatchDisplayContext";
 import "./CastDisplay.css";
 
-export const CastDisplay = ({ crewAndCast }) => {
+export const CastDisplay = () => {
+  const { crewAndCast } = useMovieResultContext();
+
   const crew = crewAndCast.crew;
   const crewArr = crew.map((persons) => persons);
 

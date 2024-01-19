@@ -1,0 +1,9 @@
+.movie-poster-and-info--wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-info--wrapper {
+  display: flex;
+  flex-direction: column;
+}

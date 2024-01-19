@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+import { useMovieResultContext } from "Contexts/ToWatchDisplayContext";
 import { useSlider } from "../../../../helpers/useSlider";
-import { ActorDisplayBox } from "../ActorDisplay/ActorDisplayBox";
+import { ActorDisplayBox } from "../ActorDisplayBox/ActorDisplayBox";
 import { SliderArrow } from "../SliderArrow/SliderArrow";
 
 import "./ActorsSliderStyles.css";
 
-export const ActorsSlider = ({ cast, display }) => {
+export const ActorsSlider = ({ display }) => {
   const { containerRef, contentRef, containerShift, handleArrowClick } =
     useSlider();
-  //TODO: MAKE SLIDER RESPONIVE
+  const { crewAndCast } = useMovieResultContext();
 
   return (
     <div className="actors-slider-container" ref={containerRef}>
@@ -18,7 +18,7 @@ export const ActorsSlider = ({ cast, display }) => {
         style={{ left: containerShift }}
         ref={contentRef}
       >
-        {cast.slice(0, 20).map((actor) => (
+        {crewAndCast?.cast.slice(0, 20).map((actor) => (
           <ActorDisplayBox key={actor.name} actor={actor} display={display} />
         ))}
       </div>
