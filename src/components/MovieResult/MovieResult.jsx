@@ -16,7 +16,6 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
 
   const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
   const { data: fetchedCrewAndCast, getData: getCrewAndCast } = useAxios(url);
-  //TODO: add loader and error components
 
   useEffect(() => {
     getCrewAndCast();
