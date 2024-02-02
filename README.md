@@ -1,6 +1,6 @@
 # MovieRoller
 
-🎬 [Roll out some random Movie!]([https://movieroller.netlify.app])
+🎬 [Roll out some random Movie!](https://movieroller.netlify.app)
 
 ## Overview
 
