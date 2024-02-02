@@ -11,7 +11,7 @@ code {
 
 img {
   display: block;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 }
 
@@ -22,8 +22,6 @@ html {
 .app-wrapper {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-direction: column;
   background: var(--background);
 }

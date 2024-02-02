@@ -1,10 +1,6 @@
 .movie-poster-wrapper {
   display: flex;
-  max-width: 500px;
-  flex: 1;
 }
 .movie-poster {
   border-radius: var(--border-radius);
-
-  max-height: auto;
 }

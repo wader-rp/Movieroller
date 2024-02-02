@@ -13,7 +13,7 @@ import { MovieResultContainerMobile } from "./components/MovieResultContainer/Mo
 
 export const MovieResult = ({ apiKey, movieId, resetData }) => {
   const { activeData, crewAndCast, setCrewAndCast } = useMovieResultContext();
-  const { screenWidth } = useWindowResize();
+  const { isMobile } = useWindowResize();
 
   const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`;
   const { data: fetchedCrewAndCast, getData: getCrewAndCast } = useAxios(url);
@@ -34,13 +34,13 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
         <MovieResultsContainerBackground posterPath={activeData.poster_path}>
           <div
             className={
-              screenWidth > 1440
+              !isMobile
                 ? "movie-results-container desktop"
                 : "movie-result-container mobile"
             }
           >
             {crewAndCast &&
-              (screenWidth > 1440 ? (
+              (!isMobile ? (
                 <MovieResultContainerDesktop />
               ) : (
                 <MovieResultContainerMobile />
@@ -49,9 +49,7 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
         </MovieResultsContainerBackground>
       </div>
       <ToWatchDisplay />
-      <div className="toggle-to-watch">
-        <ToggleToWatch />
-      </div>
+      <ToggleToWatch />
     </>
   );
 };

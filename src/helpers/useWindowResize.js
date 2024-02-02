@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useWindowResize = () => {
-  const [screenWidth, setScreenWidth] = useState();
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     const handleWindowresize = () => {
@@ -15,5 +15,5 @@ export const useWindowResize = () => {
     };
   }, []);
 
-  return { screenWidth, setScreenWidth };
+  return { screenWidth, setScreenWidth, isMobile: screenWidth < 992 };
 };

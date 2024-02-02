@@ -4,9 +4,9 @@ import "./MovieResultContainerBackground.css";
 import { useWindowResize } from "helpers/useWindowResize";
 
 export const MovieResultsContainerBackground = ({ posterPath, children }) => {
-  const { screenWidth } = useWindowResize();
-  console.log(children);
-  if (screenWidth > 1440) {
+  const { isMobile } = useWindowResize();
+
+  if (!isMobile) {
     return (
       <div
         className="movie-results-container-bg"

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext } from "react";
 import { Header } from "../Header/Header";
 import { GenresWithFilter } from "../GenresWithFilter";
 import { Slider } from "antd";
@@ -11,7 +11,7 @@ export const FilterScreen = ({ resetData, getData }) => {
   const { setYearsRange, yearsRange } = useContext(FiltersContext);
 
   return (
-    <div>
+    <>
       <Header resetData={resetData} />
       <div className="filter-screen">
         <div className="description">
@@ -43,6 +43,6 @@ export const FilterScreen = ({ resetData, getData }) => {
           ROLL!
         </button>
       </div>
-    </div>
+    </>
   );
 };
