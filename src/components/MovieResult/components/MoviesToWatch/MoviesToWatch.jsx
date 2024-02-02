@@ -7,8 +7,10 @@ import { SliderArrow } from "../SliderArrow/SliderArrow";
 import "./MoviesToWatch.css";
 
 const getToWatchFromStorage = () => {
+  const value = localStorage.getItem("toWatch");
+
   try {
-    return JSON.parse(localStorage.getItem("toWatch"));
+    return !!value ? JSON.parse(localStorage.getItem("toWatch")) : [];
   } catch {
     new Error("Could not parse localStorage value");
     return [];
