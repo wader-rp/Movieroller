@@ -1,11 +1,10 @@
 .movie-results-container-wrapper {
-  flex-grow: 2;
+  flex: 1;
 }
 
 .movie-results-container {
-  min-height: 100%;
   display: flex;
-  flex-grow: 2;
+  height: max-content;
   background: linear-gradient(
     to right,
     rgb(6, 59, 106) 20rem,
@@ -16,7 +15,7 @@
 
 .desktop {
   flex-direction: row;
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 .mobile {

@@ -1,6 +1,3 @@
 .movie-poster-wrapper {
   display: flex;
 }
-.movie-poster {
-  border-radius: var(--border-radius);
-}

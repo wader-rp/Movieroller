@@ -1,5 +1,5 @@
-import "./ActorDisplayBoxStyles.css";
 import { clsx } from "clsx";
+import "./ActorDisplayBoxStyles.css";
 
 export const ActorDisplayBox = ({ actor, display }) => {
   return (

@@ -101,14 +101,13 @@
 
 @media (max-width: 768px) {
   .filter-screen {
-    width: 90%;
     gap: 0;
   }
 
   .genres-position {
     width: 100%;
     padding: 2rem;
-    box-shadow: 0px -1px 6px var(--firstColor) inset;
+    box-shadow: 0px -1px 4px var(--firstColor) inset;
   }
 
   .description {
@@ -116,5 +115,9 @@
   }
   .genre-button {
     box-shadow: 1px 1px 2px var(--firstColor);
+  }
+  .slider-container {
+    width: 90%;
+    box-shadow: 0px -1px 4px var(--firstColor) inset;
   }
 }
