@@ -18,7 +18,8 @@
   padding: 0 1rem;
 }
 
-.mobile {
+.movie-results-container.mobile {
   flex-direction: column;
   padding: 0;
+  min-width: 100%;
 }

@@ -7,3 +7,8 @@
   font-size: 1.75rem;
   color: var(--fourthColor);
 }
+
+.title-and-year.mobile {
+  font-size: 1.6rem;
+  text-align: center;
+}

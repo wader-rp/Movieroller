@@ -1,7 +1,3 @@
-.movie-poster-wrapper {
-  flex: 1;
-}
-
 .movie-info {
   position: relative;
   display: flex;

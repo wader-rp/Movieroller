@@ -1,14 +1,20 @@
 import { useMovieResultContext } from "Contexts/ToWatchDisplayContext";
+import { useWindowResize } from "helpers/useWindowResize";
 
 import "./MoviePosterStyled.css";
 
 export const MoviePoster = () => {
   const { activeData } = useMovieResultContext();
+  const { isMobile } = useWindowResize();
 
   return (
-    <div className="movie-poster-wrapper">
+    <div
+      className={
+        !isMobile ? "movie-poster-wrapper" : "movie-poster-wrapper mobile"
+      }
+    >
       <img
-        className="movie-poster"
+        className={!isMobile ? "movie-poster" : "movie-poster mobile"}
         alt="poster"
         src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${activeData.poster_path}`}
       />

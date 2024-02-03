@@ -1,12 +1,15 @@
 .movie-poster-and-info--wrapper {
   display: flex;
   flex-direction: column;
+  background-color: var(--secondColor);
+  padding: 0.15rem;
 }
 
 .movie-info--wrapper {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   background-color: var(--secondColor);
-  padding: 0.5rem 0.5rem;
+  padding: 2rem 0;
   align-items: center;
 }

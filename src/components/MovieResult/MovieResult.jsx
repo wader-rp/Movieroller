@@ -28,7 +28,13 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
   return (
     <>
       <Header resetData={resetData} />
-      <div className="movie-results-container-wrapper">
+      <div
+        className={
+          isMobile
+            ? "movie-results-container-wrapper"
+            : "movie-results-container-wrapper mobile"
+        }
+      >
         <MovieResultsContainerBackground posterPath={activeData.poster_path}>
           <div
             className={

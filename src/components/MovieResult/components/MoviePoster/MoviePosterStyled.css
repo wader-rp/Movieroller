@@ -1,3 +1,12 @@
 .movie-poster-wrapper {
   display: flex;
 }
+
+.movie-poster-wrapper.mobile {
+  justify-content: center;
+}
+
+.movie-poster.mobile {
+  max-width: 50%;
+  border: 15px solid var(--firstColor);
+}
