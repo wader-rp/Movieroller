@@ -1,0 +1,7 @@
+.slider-container {
+  width: 45rem;
+  box-shadow: -1px -1px 12px var(--firstColor) inset;
+  border-radius: var(--border-radius);
+  padding: 1rem 5rem;
+  position: relative;
+}

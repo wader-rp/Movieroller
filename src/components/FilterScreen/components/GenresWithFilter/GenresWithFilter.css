@@ -1,0 +1,59 @@
+.genres-position {
+  display: flex;
+  padding: 1.5rem;
+  width: 45%;
+  border-radius: var(--border-radius);
+  box-shadow: -1px -1px 12px var(--firstColor) inset;
+  justify-content: center;
+}
+.genres-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.genres-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 0 5px 0;
+}
+.genre-button {
+  background-color: white;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 2px;
+  padding: 7px;
+  color: var(--firstColor);
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  border-style: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  box-shadow: 2px 2px 3px var(--firstColor);
+}
+
+.genre-button:hover {
+  transform: scale(0.86);
+}
+
+.genre-button-checked {
+  background-color: var(--firstColor);
+  color: var(--thirdColor);
+}
+
+.genre-button.clear-button {
+  color: var(--thirdColor);
+}
+
+@media (max-width: 768px) {
+  .genres-position {
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0px -1px 4px var(--firstColor) inset;
+  }
+  .genre-button {
+    box-shadow: 1px 1px 2px var(--firstColor);
+  }
+}

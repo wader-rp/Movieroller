@@ -1,0 +1,11 @@
+.description {
+  border-bottom: 2px solid var(--firstColor);
+  text-align: center;
+  width: 60%;
+  color: var(--firstColor);
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px;
+  font-size: 1em;
+  text-shadow: 0.5px 0.5px 1.5px black;
+  padding: 1rem;
+}

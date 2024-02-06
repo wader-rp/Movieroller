@@ -1,0 +1,19 @@
+.adult-switch-spacing {
+  margin: 1rem 0 0 0;
+}
+.adult-switch-checked {
+  background-color: var(--thirdColor) !important;
+}
+.ant-slider-handle::after {
+  background-color: var(--firstColor) !important;
+  box-shadow: 0 0 10px var(--firstColor) !important;
+}
+
+.ant-switch {
+  background-color: var(--firstColor);
+  font-family: "Orbitron", sans-serif;
+}
+
+.ant-switch .ant-switch-inner .ant-switch-inner-checked {
+  color: black;
+}

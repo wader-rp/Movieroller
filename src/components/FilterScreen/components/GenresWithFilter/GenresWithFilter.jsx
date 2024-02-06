@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import "./styles.css";
-import { genres } from "../data/MovieGenres";
+import { genres } from "../../../../data/MovieGenres";
 import classNames from "classnames";
-import { FiltersContext } from "../Contexts/FilterContext";
+import { FiltersContext } from "../../../../Contexts/FilterContext";
+
+import "./GenresWithFilter.css";
 
 export const GenresWithFilter = () => {
   const { genreIdsForUrl, setGenreIdsForUrl, triggerGenre } =

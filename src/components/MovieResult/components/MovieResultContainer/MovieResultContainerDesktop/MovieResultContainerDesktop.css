@@ -5,7 +5,7 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
-  max-width: 75rem;
+  max-width: 70%;
 }
 
 .movie-title-and-add-button--wrapper {
