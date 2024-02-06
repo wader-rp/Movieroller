@@ -1,7 +1,31 @@
+.actors-dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--firstColor);
+  padding: 1rem 0;
+  gap: 1rem;
+}
 .actors-dropdown {
   display: flex;
   gap: 1rem;
-  border: 1px solid var(--firstColor);
+
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
+}
+
+.actors-dropdown-container > button {
+  width: 10rem;
+  height: 2rem;
+  background: rgb(15, 68, 113, 0.7);
+  gap: 0.8rem;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+.actors-dropdown-container > button:hover {
+  background: rgb(15, 68, 113, 0.9);
 }

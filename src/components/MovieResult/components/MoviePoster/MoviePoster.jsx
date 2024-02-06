@@ -17,6 +17,7 @@ export const MoviePoster = () => {
         className={!isMobile ? "movie-poster" : "movie-poster mobile"}
         alt="poster"
         src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${activeData.poster_path}`}
+        style={{ objectFit: "contain", maxWidth: "100%", maxHeight: "100%" }}
       />
     </div>
   );

@@ -1,11 +1,11 @@
 .movie-info {
   position: relative;
   display: flex;
-  flex: 2;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
-  padding-left: 2rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  max-width: 75rem;
 }
 
 .movie-title-and-add-button--wrapper {

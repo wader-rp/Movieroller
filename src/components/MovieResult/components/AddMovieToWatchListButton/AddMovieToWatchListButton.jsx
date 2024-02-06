@@ -17,7 +17,7 @@ export const AddMovieToWatchListButton = () => {
       }
       onClick={() => addMovieToToWatchList(activeData, crewAndCast)}
     >
-      <PlusSquareOutlined className="add-to-watch" />
+      <PlusSquareOutlined />
       <h5>Add to watch list</h5>
     </div>
   );

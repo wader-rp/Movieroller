@@ -1,9 +1,18 @@
 .movie-poster-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+  max-height: 39rem;
+}
+
+.movie-poster {
+  width: 100%;
 }
 
 .movie-poster-wrapper.mobile {
   justify-content: center;
+  height: 100%;
 }
 
 .movie-poster.mobile {

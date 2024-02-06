@@ -8,3 +8,9 @@
   font-size: 1rem;
   color: var(--fourthColor);
 }
+
+.overview.mobile {
+  padding: 1rem 1rem;
+  background: var(--secondColor);
+  text-align: center;
+}

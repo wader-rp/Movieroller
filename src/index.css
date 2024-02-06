@@ -9,19 +9,13 @@ code {
     monospace;
 }
 
-img {
-  display: block;
-  max-width: 80%;
-  height: auto;
-}
-
 html {
   min-width: auto;
 }
 
 .app-wrapper {
-  min-height: 100vh;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   background: var(--background);
 }

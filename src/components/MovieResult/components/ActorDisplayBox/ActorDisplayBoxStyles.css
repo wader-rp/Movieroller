@@ -13,18 +13,18 @@
 
 .slider {
   width: 10rem;
-  height: 15rem;
+  height: 100%;
 }
 
 .dropdown {
-  width: 5rem;
-  height: 7, 5rem;
+  width: 10rem;
+  height: 15rem;
 }
 
 .actor-name-and-char-container {
   background-color: var(--firstColor);
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  padding: 5px 5px;
+  padding: 5px 0;
   width: 100%;
 }
 

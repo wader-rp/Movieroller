@@ -4,7 +4,8 @@
 
 .movie-results-container {
   display: flex;
-  height: max-content;
+  min-height: 39rem;
+  justify-content: space-around;
   background: linear-gradient(
     to right,
     rgb(6, 59, 106) 20rem,
@@ -13,13 +14,9 @@
   );
 }
 
-.desktop {
-  flex-direction: row;
-  padding: 0 1rem;
-}
-
 .movie-results-container.mobile {
   flex-direction: column;
   padding: 0;
   min-width: 100%;
+  background: unset;
 }

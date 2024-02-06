@@ -8,6 +8,7 @@ import { useWindowResize } from "helpers/useWindowResize";
 import { MovieResultsContainerBackground } from "./components/MovieResultsContainerBackground/MovieResultsContainerBackground";
 import { MovieResultContainerDesktop } from "./components/MovieResultContainer/MovieResultContainerDesktop/MovieResultContainerDesktop";
 import { MovieResultContainerMobile } from "./components/MovieResultContainer/MovieResultContainerMobile/MovieResultContainerMobile";
+
 import "./MovieResultStyles.css";
 
 export const MovieResult = ({ apiKey, movieId, resetData }) => {
@@ -30,7 +31,7 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
       <Header resetData={resetData} />
       <div
         className={
-          isMobile
+          !isMobile
             ? "movie-results-container-wrapper"
             : "movie-results-container-wrapper mobile"
         }
@@ -39,8 +40,8 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
           <div
             className={
               !isMobile
-                ? "movie-results-container desktop"
-                : "movie-result-container mobile"
+                ? "movie-results-container"
+                : "movie-results-container mobile"
             }
           >
             {crewAndCast &&

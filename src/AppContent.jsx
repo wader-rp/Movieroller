@@ -20,7 +20,7 @@ export const AppContent = () => {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const randomPage = randomNumber(30);
   const genreIdsJoined = genreIdsForUrl.join("|");
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=${includeAdult}&include_video=false&page=&page=${randomPage}&primary_release_date.gte=${startYear}&primary_release_date.lte=${endYear}&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=${includeAdult}&include_video=false&page=${randomPage}&primary_release_date.gte=${startYear}&primary_release_date.lte=${endYear}&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
 
   const { data: movieData, getData, resetData } = useAxios(url);
 

@@ -1,7 +1,7 @@
 import React from "react";
+import { useWindowResize } from "helpers/useWindowResize";
 
 import "./MovieResultContainerBackground.css";
-import { useWindowResize } from "helpers/useWindowResize";
 
 export const MovieResultsContainerBackground = ({ posterPath, children }) => {
   const { isMobile } = useWindowResize();
