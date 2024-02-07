@@ -1,7 +1,7 @@
-import { MoviesToWatch } from "./MoviesToWatch";
+import { MoviesToWatch } from "./components/MoviesToWatch/MoviesToWatch";
 import { useMovieResultContext } from "../../../../Contexts/ToWatchDisplayContext";
 
-import "./ToWatch.css";
+import "./ToWatchDisplay.css";
 
 export const ToWatchDisplay = () => {
   const { expandedToWatchList } = useMovieResultContext();

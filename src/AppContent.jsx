@@ -20,7 +20,11 @@ export const AppContent = () => {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const randomPage = randomNumber(30);
   const genreIdsJoined = genreIdsForUrl.join("|");
-  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=${includeAdult}&include_video=false&page=${randomPage}&primary_release_date.gte=${startYear}&primary_release_date.lte=${endYear}&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
+  const yearsFormatted = {
+    startYearFormatted: `${startYear}-01-01`,
+    endYearFormatted: `${endYear}-01-01`,
+  };
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&include_adult=${includeAdult}&include_video=false&page=${randomPage}&primary_release_date.gte=${yearsFormatted.startYearFormatted}&primary_release_date.lte=${yearsFormatted.endYearFormatted}&with_genres=${genreIdsJoined}&with_watch_monetization_types=flatrate`;
 
   const { data: movieData, getData, resetData } = useAxios(url);
 

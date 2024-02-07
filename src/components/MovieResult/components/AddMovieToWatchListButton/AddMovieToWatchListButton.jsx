@@ -8,6 +8,7 @@ import "./AddMovieToWatchListButton.css";
 export const AddMovieToWatchListButton = () => {
   const { activeData, crewAndCast } = useMovieResultContext();
   const { isMobile } = useWindowResize();
+
   return (
     <div
       className={

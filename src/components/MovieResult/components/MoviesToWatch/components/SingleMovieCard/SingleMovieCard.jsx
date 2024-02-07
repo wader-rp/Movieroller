@@ -1,5 +1,5 @@
 import { OnHoverIcons } from "../OnHoverToWatch/OnHoverIcons";
-import { useHover } from "../../../../../helpers/useHover";
+import { useHover } from "../../../../../../helpers/useHover";
 
 import "./SingleMovieCard.css";
 
@@ -22,7 +22,7 @@ export const SingleMovieCard = ({
       <img
         alt="movie-poster"
         src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`}
-        className="movie-to-watch-poster"
+        className="movie-poster"
       />
       {isHovering.index === index && (
         <OnHoverIcons

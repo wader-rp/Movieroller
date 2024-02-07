@@ -8,7 +8,9 @@ import { useWindowResize } from "helpers/useWindowResize";
 import { MovieResultsContainerBackground } from "./components/MovieResultsContainerBackground/MovieResultsContainerBackground";
 import { MovieResultContainerDesktop } from "./components/MovieResultContainer/MovieResultContainerDesktop/MovieResultContainerDesktop";
 import { MovieResultContainerMobile } from "./components/MovieResultContainer/MovieResultContainerMobile/MovieResultContainerMobile";
+import { ToastContainer } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 import "./MovieResultStyles.css";
 
 export const MovieResult = ({ apiKey, movieId, resetData }) => {
@@ -55,6 +57,7 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
       </div>
       <ToWatchDisplay />
       <ToggleToWatch />
+      <ToastContainer />
     </>
   );
 };

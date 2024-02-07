@@ -1,14 +1,14 @@
 .movie {
   position: relative;
   box-shadow: 0 0 15px var(--firstColor);
-  width: 350px;
+  width: 300px;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  border: 10px solid var(--firstColor);
+  border: 5px solid var(--firstColor);
   border-radius: var(--border-radius);
 }
+
 .movie::after {
   content: "";
   width: 100%;
@@ -34,14 +34,17 @@
 }
 
 .movie-to-watch-poster {
-  width: 250px;
-  max-height: 400px;
+  max-width: 100%;
 }
 
 .movie-title {
-  text-align: center;
   font-family: "Orbitron", sans-serif;
-  font-size: 1.5em;
+  font-size: 0.9rem;
+  height: 20%;
+  text-align: center;
+  display: flex;
+
+  align-items: center;
   letter-spacing: 3px;
   color: var(--fourthColor);
 }

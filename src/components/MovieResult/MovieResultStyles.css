@@ -1,5 +1,6 @@
 .movie-results-container-wrapper {
   flex: 1;
+  min-width: 100%;
 }
 
 .movie-results-container {

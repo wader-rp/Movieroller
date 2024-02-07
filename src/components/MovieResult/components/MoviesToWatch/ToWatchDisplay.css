@@ -9,8 +9,8 @@
   z-index: 10000;
   position: absolute;
   left: 5%;
-  bottom: calc(var(--footerHeight) + 50px);
-  height: 70%;
+  top: 10%;
+  height: 75%;
   width: 90%;
   padding: 0.5em 0.5em 0.5em 0.5em;
   background-color: var(--fourthColor);
@@ -33,4 +33,30 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(15, 68, 113, 0.9);
+}
+
+@media (max-width: 1600px) {
+  .to-watch {
+    height: 90%;
+  }
+}
+
+@media (max-width: 990px) {
+  .to-watch {
+    top: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .to-watch {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+@media (max-width: 550px) {
+  .to-watch {
+    width: 100%;
+    left: 0;
+  }
 }

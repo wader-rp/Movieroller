@@ -3,6 +3,7 @@
   gap: 2em;
   position: absolute;
   z-index: 20;
+  height: 100%;
 }
 
 .movie-icon-wrapper {
