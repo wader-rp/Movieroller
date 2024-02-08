@@ -9,7 +9,6 @@ export const MovieResultContextProvider = ({ children }) => {
 
   const toggleExpandedState = (expanded) => {
     setExpandedToWatchList(expanded);
-
     document.body.style.overflow = expanded ? "hidden" : "auto";
   };
 
