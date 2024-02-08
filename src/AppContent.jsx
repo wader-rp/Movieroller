@@ -34,6 +34,8 @@ export const AppContent = () => {
 
   const movieId = activeData && activeData.id;
 
+  
+
   return (
     <div className="app-wrapper">
       {!movieData ? (

@@ -12,13 +12,6 @@ export const ActorsDropdown = ({ display }) => {
 
   const slicedCast = isExpanded ? cast.slice(0, 20) : cast.slice(0, 6);
 
-  useEffect(() => {
-    if (!isExpanded) {
-      dropdownRef.current.scrollIntoView();
-    }
-    return;
-  }, [isExpanded]);
-
   return (
     <div className="actors-dropdown-container">
       <div className="actors-dropdown" ref={dropdownRef}>
