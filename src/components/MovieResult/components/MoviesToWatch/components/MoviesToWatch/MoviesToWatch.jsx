@@ -38,7 +38,7 @@ export const MoviesToWatch = () => {
   return (
     <div className="movies-to-watch-wrapper">
       <div className="movies-to-watch-container" ref={containerRef}>
-        {containerRef.current?.offsetWidth > 650 && (
+        {contentRef.current?.offsetWidth > 650 && (
           <SliderArrow direction={"left"} handleArrowClick={handleArrowClick} />
         )}
         <div
@@ -57,7 +57,7 @@ export const MoviesToWatch = () => {
             />
           ))}
         </div>
-        {containerRef.current?.offsetWidth > 650 && (
+        {contentRef.current?.offsetWidth > 650 && (
           <SliderArrow
             direction={"right"}
             handleArrowClick={handleArrowClick}

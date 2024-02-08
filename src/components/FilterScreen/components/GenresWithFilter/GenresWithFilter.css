@@ -1,7 +1,7 @@
 .genres-position {
   display: flex;
   padding: 1.5rem;
-  width: 45%;
+  width: 45rem;
   border-radius: var(--border-radius);
   box-shadow: -1px -1px 12px var(--firstColor) inset;
   justify-content: center;
@@ -51,7 +51,11 @@
   .genres-position {
     width: 100%;
     padding: 2rem;
-    box-shadow: 0px -1px 4px var(--firstColor) inset;
+    box-shadow: none;
+    border-radius: unset;
+    padding-top: none;
+    border-bottom: 2px groove var(--secondColor);
+    background-color: var(--fourthColor);
   }
   .genre-button {
     box-shadow: 1px 1px 2px var(--firstColor);

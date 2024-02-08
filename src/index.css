@@ -18,12 +18,13 @@ html {
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
-  background: var(--background);
+  /* background: var(--background); */
 }
 
 :root {
   --firstColor: rgb(8, 51, 88);
   --secondColor: rgb(15, 68, 113);
+
   --thirdColor: rgb(252, 60, 60);
   --fourthColor: rgb(246, 246, 246);
   --footerHeight: 110px;

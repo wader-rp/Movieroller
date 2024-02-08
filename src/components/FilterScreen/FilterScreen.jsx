@@ -15,8 +15,10 @@ export const FilterScreen = ({ resetData, getData }) => {
         <h4>Select movie categories</h4>
         <GenresWithFilter />
         <IncludeAdult />
+
         <h4>Select a range of years</h4>
         <YearsSlider />
+
         <button className="roll-button" onClick={getData}>
           ROLL!
         </button>

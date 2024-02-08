@@ -17,3 +17,9 @@
 .ant-switch .ant-switch-inner .ant-switch-inner-checked {
   color: black;
 }
+
+@media (max-width: 786px) {
+  .adult-switch-spacing {
+    padding: 1rem ;
+  }
+}

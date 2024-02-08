@@ -10,7 +10,7 @@
   color: var(--fourthColor);
   font-size: 20px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 5;
 }
 .slider-arrow:hover {
   background-color: rgb(8, 51, 88, 1);

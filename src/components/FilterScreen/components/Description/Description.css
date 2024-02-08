@@ -9,3 +9,8 @@
   text-shadow: 0.5px 0.5px 1.5px black;
   padding: 1rem;
 }
+@media (max-width: 768px) {
+  .description {
+    padding-top: unset;
+  }
+}
