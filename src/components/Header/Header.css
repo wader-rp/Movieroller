@@ -2,11 +2,11 @@
   width: 100%;
   padding: 1rem 0;
   background-color: var(--firstColor);
-
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: none;
+  height: 60px;
 }
 
 .header-title {
