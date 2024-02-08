@@ -4,7 +4,7 @@ import { useMovieResultContext } from "Contexts/ToWatchDisplayContext";
 import "./MoviesToWatchButtons.css";
 
 export const MoviesToWatchButtons = ({ setMovies }) => {
-  const { setExpandedToWatchList } = useMovieResultContext();
+  const { toggleExpandedState } = useMovieResultContext();
 
   const handleClearAllMoviesFromStorage = (setMovies) => {
     localStorage.removeItem("toWatch");
@@ -20,7 +20,7 @@ export const MoviesToWatchButtons = ({ setMovies }) => {
         Clear All
       </button>
       <button
-        onClick={() => setExpandedToWatchList((prev) => !prev)}
+        onClick={() => toggleExpandedState(false)}
         className="button-to-watch "
       >
         Exit

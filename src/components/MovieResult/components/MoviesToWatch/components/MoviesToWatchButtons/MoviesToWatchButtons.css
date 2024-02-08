@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
   gap: 2em;
   width: 100%;
-  height: max-content;
 }
 
 .button-to-watch {
@@ -28,7 +28,6 @@
 
 @media (max-width: 550px) {
   .button-to-watch {
-    margin-top: 15px;
-    font-size: 10px;
+    font-size: 15px;
   }
 }

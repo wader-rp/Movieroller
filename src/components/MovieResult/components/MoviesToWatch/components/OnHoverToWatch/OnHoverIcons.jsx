@@ -9,7 +9,7 @@ export const OnHoverIcons = ({
   setMovies,
   handleArrowClick,
 }) => {
-  const { setActiveData, setExpandedToWatchList, setCrewAndCast } =
+  const { setActiveData, setCrewAndCast, toggleExpandedState } =
     useMovieResultContext();
 
   const removeMovie = (index) => {
@@ -27,7 +27,8 @@ export const OnHoverIcons = ({
       cast: currentStorage[index].cast,
       crew: currentStorage[index].crew,
     });
-    setExpandedToWatchList((prev) => !prev);
+
+    toggleExpandedState(false);
   };
 
   return (

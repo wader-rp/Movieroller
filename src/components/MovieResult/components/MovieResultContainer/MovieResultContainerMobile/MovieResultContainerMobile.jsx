@@ -12,9 +12,9 @@ import "./MovieResultContainerMobile.css";
 
 export const MovieResultContainerMobile = () => (
   <>
-    <div className="movie-poster-and-info--wrapper">
+    <div className="movie-poster-and-info-wrapper">
       <MoviePoster />
-      <div className="movie-info--wrapper">
+      <div className="movie-info-wrapper">
         <MovieTitle />
         <AddMovieToWatchListButton />
         <Genres />

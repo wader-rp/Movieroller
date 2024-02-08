@@ -7,15 +7,21 @@ export const MovieResultContextProvider = ({ children }) => {
   const [expandedToWatchList, setExpandedToWatchList] = useState(false);
   const [crewAndCast, setCrewAndCast] = useState();
 
+  const toggleExpandedState = (expanded) => {
+    setExpandedToWatchList(expanded);
+
+    document.body.style.overflow = expanded ? "hidden" : "auto";
+  };
+
   return (
     <MovieResultContext.Provider
       value={{
         expandedToWatchList,
-        setExpandedToWatchList,
         activeData,
         setActiveData,
         crewAndCast,
         setCrewAndCast,
+        toggleExpandedState,
       }}
     >
       {children}

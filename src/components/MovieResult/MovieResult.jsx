@@ -56,7 +56,10 @@ export const MovieResult = ({ apiKey, movieId, resetData }) => {
         </MovieResultsContainerBackground>
       </div>
       <ToWatchDisplay />
-      <ToggleToWatch />
+      <div className="toggle-to-watch-wrapper">
+        <ToggleToWatch />
+      </div>
+
       <ToastContainer />
     </>
   );

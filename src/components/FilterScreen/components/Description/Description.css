@@ -11,6 +11,10 @@
 }
 @media (max-width: 768px) {
   .description {
-    padding-top: unset;
+    width: 100%;
+    border: unset;
+  }
+  h4 {
+    padding-bottom: 1rem;
   }
 }

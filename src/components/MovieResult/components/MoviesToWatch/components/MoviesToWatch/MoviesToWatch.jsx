@@ -6,7 +6,6 @@ import { SliderArrow } from "components/MovieResult/components/SliderArrow/Slide
 import { MoviesToWatchButtons } from "../MoviesToWatchButtons/MoviesToWatchButtons";
 
 import "./MoviesToWatch.css";
-import { useWindowResize } from "helpers/useWindowResize";
 
 const getToWatchFromStorage = () => {
   const value = localStorage.getItem("toWatch");
@@ -24,7 +23,6 @@ export const MoviesToWatch = () => {
   const { containerRef, contentRef, containerShift, handleArrowClick } =
     useSlider();
   const { expandedToWatchList } = useMovieResultContext();
-  const { isMobile } = useWindowResize();
 
   useEffect(() => {
     if (expandedToWatchList) {
@@ -38,12 +36,12 @@ export const MoviesToWatch = () => {
   return (
     <div className="movies-to-watch-wrapper">
       <div className="movies-to-watch-container" ref={containerRef}>
-        {contentRef.current?.offsetWidth > 650 && (
+        {contentRef.current?.offsetWidth > 1024 && (
           <SliderArrow direction={"left"} handleArrowClick={handleArrowClick} />
         )}
         <div
           className="to-watch-slider"
-          style={!isMobile ? { left: containerShift } : null}
+          style={{ left: containerShift }}
           ref={contentRef}
         >
           {movies.map((movie, index) => (
@@ -57,7 +55,7 @@ export const MoviesToWatch = () => {
             />
           ))}
         </div>
-        {contentRef.current?.offsetWidth > 650 && (
+        {contentRef.current?.offsetWidth > 1024 && (
           <SliderArrow
             direction={"right"}
             handleArrowClick={handleArrowClick}

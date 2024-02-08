@@ -12,8 +12,9 @@ h4 {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex: 1;
   flex-direction: column;
-  gap: 0.2rem;
   background: var(--background-color);
   margin-top: 1rem;
 }
@@ -26,24 +27,20 @@ h4 {
   padding: 1.2rem;
   font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   border-style: none;
   cursor: pointer;
   transition-duration: 0.3s;
-  box-shadow: 3px 3px 7px var(--firstColor);
+  box-shadow: 1px 1px 5px var(--firstColor);
 }
 
 .roll-button:hover {
-  transform: scale(1.1);
+  transform: scale(0.98);
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .filter-screen {
     gap: 0;
-  }
-  .description {
-    width: 100%;
-    font-size: unset;
   }
 }

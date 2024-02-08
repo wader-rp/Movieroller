@@ -40,11 +40,19 @@
 .movie-title {
   font-family: "Orbitron", sans-serif;
   font-size: 0.9rem;
-  height: 20%;
   text-align: center;
   display: flex;
-
+  flex: 1;
   align-items: center;
   letter-spacing: 3px;
   color: var(--fourthColor);
+}
+
+@media (max-width: 1025px) and (min-width: 768px) {
+  .movie {
+    width: 500px;
+  }
+  .movie-title {
+    font-size: 2rem;
+  }
 }

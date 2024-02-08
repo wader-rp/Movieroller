@@ -4,11 +4,11 @@ import { DoubleRightOutlined } from "@ant-design/icons";
 import "./ToggleToWatch.css";
 
 export const ToggleToWatch = () => {
-  const { setExpandedToWatchList } = useMovieResultContext();
+  const { toggleExpandedState } = useMovieResultContext();
 
   const handleToggleToWatchList = () => {
-    setExpandedToWatchList(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    toggleExpandedState(true);
+    window.scrollTo({ top: 0 });
   };
 
   return (
